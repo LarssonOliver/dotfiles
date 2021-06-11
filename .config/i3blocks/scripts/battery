@@ -1,0 +1,44 @@
+#!/bin/bash
+
+BAT=$(acpi -b | grep -oP '1?[0-9]?[0-9](?=%)')
+CHARGING=$(acpi -a | grep -o 'on-line')
+REMAINING=$(acpi -b | grep -oP '[0-9]{2}:[0-9]{2}(?=:[0-9]{2})')
+
+
+# Find the correct icon
+if [ ! -z "$CHARGING" ]
+then 
+	MSG=""
+else
+	MSG=""
+	[ $BAT -le 90 ] && MSG=""
+	[ $BAT -le 80 ] && MSG=""
+	[ $BAT -le 70 ] && MSG=""
+	[ $BAT -le 60 ] && MSG=""
+	[ $BAT -le 50 ] && MSG=""
+	[ $BAT -le 40 ] && MSG=""
+	[ $BAT -le 30 ] && MSG=""
+	[ $BAT -le 20 ] && MSG=""
+	[ $BAT -le 10 ] && MSG=""
+	[ $BAT -le 5 ] && MSG=""
+fi
+
+MSG="$MSG $BAT%"
+
+# Long version message
+if [ ! -z "$REMAINING" ]
+then
+	[[ $REMAINING =~ ^0 ]] && REMAINING=${REMAINING:1} # 03:05 -> 3:05
+	REMAINING=${REMAINING//:/ } # 3:05 -> 3 05
+	REMAINING=${REMAINING// 0/ } # 3 05 -> 3 5
+	echo "$MSG $(printf '(%dh %dm)' $REMAINING)"
+fi
+
+# Short display
+echo "$MSG"
+
+# Set urgent flag below 5% or use orange below 20%
+[ $BAT -le 5 ] && exit 33
+[ $BAT -le 20 ] && echo "#D08770"
+
+exit 0
