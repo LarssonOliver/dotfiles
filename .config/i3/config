@@ -36,6 +36,8 @@ exec_always --no-startup-id numlockx on
 
 # Keymap toggle
 exec_always "setxkbmap -layout us,se -option 'grp:shifts_toggle'"
+# Remap caps lock to shift
+exec_always "xmodmap -e 'keycode 66 = Shift_L NoSymbol Shift_L'"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
