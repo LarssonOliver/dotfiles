@@ -26,6 +26,7 @@ thunar
 xorg-server
 xss-lock
 yay (aur)
+xkb-switch (aur)
 
 ### Additional for laptops:
 acpi

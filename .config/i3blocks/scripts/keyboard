@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xkb-switch -p
+xkb-switch -W

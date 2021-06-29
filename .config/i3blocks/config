@@ -11,6 +11,9 @@ color=#A3BE8C
 interval=10
 display_wifi_name=1
 
+[keyboard]
+interval=persist
+
 [battery]
 interval=5
 
