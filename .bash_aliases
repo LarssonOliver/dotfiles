@@ -11,3 +11,5 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
 
+alias chrome=google-chrome-stable
+
