@@ -37,8 +37,7 @@ set nobackup
 set noswapfile
 
 " line numbers and distances
-"set relativenumber 
-set number 
+"set relativenumber set number 
 " number of lines offset when jumping
 set scrolloff=2
 
