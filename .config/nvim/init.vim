@@ -128,6 +128,12 @@ Plug 'itchyny/lightline.vim'
 " https://github.com/arcticicestudio/nord-vim 
 Plug 'arcticicestudio/nord-vim'
 
+" https://github.com/prabirshrestha/vim-lsp
+Plug 'prabirshrestha/vim-lsp'
+
+" https://github.com/mattn/vim-lsp-settings
+Plug 'mattn/vim-lsp-settings'
+
 " Initialize plugin system
 call plug#end()
 
