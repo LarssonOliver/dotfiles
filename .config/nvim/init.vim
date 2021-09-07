@@ -135,6 +135,12 @@ Plug 'prabirshrestha/vim-lsp'
 " https://github.com/mattn/vim-lsp-settings
 Plug 'mattn/vim-lsp-settings'
 
+" https://github.com/prabirshrestha/asyncomplete.vim
+Plug 'prabirshrestha/asyncomplete.vim'
+
+" https://github.com/prabirshrestha/asyncomplete-lsp.vim 
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 " Initialize plugin system
 call plug#end()
 
