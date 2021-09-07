@@ -1,0 +1,6 @@
+# Increase scroll speed.
+# This .* regex might break some programs.
+".*"
+  None, Up, Button4, 5
+  None, Down, Button5, 5
+

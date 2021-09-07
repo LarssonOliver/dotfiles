@@ -12,7 +12,8 @@ echo "${SCRIPTNAME}: Linking home directory files..."
 ln -srv ${SRCDIR}/.bash_aliases ${HOME}
 ln -srv ${SRCDIR}/.bashrc ${HOME}
 ln -srv ${SRCDIR}/.gtkrc-2.0 ${HOME}
-ln -srv ${SRCDIR}/.vimrc ${HOME}
+ln -srv ${SRCDIR}/.config/nvim/init.vim ${HOME}/.vimrc
+ln -srv ${SRCDIR}/.imwheelrc ${HOME}
 
 echo "${SCRIPTNAME}: Linking \".local/share\" directories..."
 mkdir -vp ${HOME}/.local/share/fonts
