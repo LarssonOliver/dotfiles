@@ -13,3 +13,5 @@ alias more=less
 
 alias chrome=google-chrome-stable
 
+alias bat='bat --theme Nord'
+

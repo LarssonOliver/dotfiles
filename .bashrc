@@ -17,3 +17,4 @@ then
 	exec fish
 fi
 
+export EDITOR=vim
