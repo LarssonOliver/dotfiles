@@ -141,6 +141,9 @@ Plug 'prabirshrestha/asyncomplete.vim'
 " https://github.com/prabirshrestha/asyncomplete-lsp.vim 
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
+" https://github.com/editorconfig/editorconfig-vim
+Plug 'editorconfig/editorconfig-vim'
+
 " Initialize plugin system
 call plug#end()
 
