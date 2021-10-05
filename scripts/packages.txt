@@ -25,4 +25,4 @@ acpi
 brightnessctl
 iwd
 networkmanager
-network-manager-applet
+network-manager-appletnoto-fonts
