@@ -4,3 +4,7 @@
   None, Up, Button4, 5
   None, Down, Button5, 5
 
+"^alacritty"
+  None, Up, Button4, 1
+  None, Down, Button5, 1
+
