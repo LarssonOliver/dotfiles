@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:SauceCodePro Nerd Font Mono 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -54,7 +54,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#D8DEE9' -nb '#2E3440' -sb '#5E81AC' -sf '#D8DEE9' -fn 'monospace-10' -p 'dmenu '"
+bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#D8DEE9' -nb '#2E3440' -sb '#5E81AC' -sf '#D8DEE9' -fn 'SauceCodePro Nerd Font Mono-8' -p 'dmenu '"
 
 # change focus
 bindsym $mod+h focus left
