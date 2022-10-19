@@ -2,17 +2,23 @@
 # For config instructions, see https://github.com/anishathalye/dotbot
 
 - defaults:
-  link:
-    relink: true
-    create: true
+    link:
+      relink: true
+      create: true
 
 - clean: ["~"]
 
 - create:
-  ~/dev:
+    ~/dev:
 
 - link:
-  ~/.gtkrc-2.0: gtkrc-2.0
-  ~/.bashrc: bashrc
-  ~/.bash_aliases: bash_aliases
-  ~/.config: config
+    ~/.bashrc:
+      path: bashrc
+      force: true
+    ~/.bash_aliases: bash_aliases
+
+    ~/.config/alacritty: config/alacritty
+    ~/.config/gtk-3.0: config/gtk-3.0
+    ~/.config/i3: config/i3
+    ~/.config/i3blocks: config/i3blocks
+    ~/.config/picom.conf: config/picom/picom.conf
