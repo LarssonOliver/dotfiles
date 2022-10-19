@@ -2,6 +2,7 @@
 
 command -v acpi > /dev/null
 [ $? -ne 0 ] && exit 0
+[ "$(acpi -b)" == "" ] && exit 0
 
 BAT=$(acpi -b | grep -oP '1?[0-9]?[0-9](?=%)' | head -n 1)
 CHARGING=$(acpi -a | grep -o 'on-line')
