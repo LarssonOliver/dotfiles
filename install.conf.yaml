@@ -30,3 +30,5 @@
     ~/.oh-my-zsh/custom/plugins/:
       glob: true
       path: zsh/plugins/*
+
+    ~/.ssh/config: ssh/config
