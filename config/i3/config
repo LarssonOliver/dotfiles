@@ -90,18 +90,18 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -217,11 +217,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # Set background
 exec_always feh --bg-scale ~/.config/wallpaper.jpg
 
-exec --no-startup-id /usr/share/display.sh
-
 # Start picom
 exec picom --config ~/.config/picom.conf
-
-# Start imwheel - see ~/.imwheelrc
-exec imwheel -b 45
 

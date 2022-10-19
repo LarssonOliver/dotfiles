@@ -6,7 +6,6 @@ interval=900
 color=#A4C2F4
 
 [iface]
-IFACE=wlan0
 color=#A3BE8C
 interval=10
 display_wifi_name=1
