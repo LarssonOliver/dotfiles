@@ -1,0 +1,18 @@
+---
+# For config instructions, see https://github.com/anishathalye/dotbot
+
+- defaults:
+  link:
+    relink: true
+    create: true
+
+- clean: ["~"]
+
+- create:
+  ~/dev:
+
+- link:
+  ~/.gtkrc-2.0: gtkrc-2.0
+  ~/.bashrc: bashrc
+  ~/.bash_aliases: bash_aliases
+  ~/.config: config
