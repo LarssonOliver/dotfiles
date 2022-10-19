@@ -6,19 +6,27 @@
       relink: true
       create: true
 
-- clean: ["~"]
+- clean: ["~", "~/.config"]
+
+- shell:
+    - [sh pre-install.sh, Running pre installation script]
 
 - create:
     ~/dev:
 
 - link:
-    ~/.bashrc:
-      path: bashrc
-      force: true
-    ~/.bash_aliases: bash_aliases
-
     ~/.config/alacritty: config/alacritty
     ~/.config/gtk-3.0: config/gtk-3.0
     ~/.config/i3: config/i3
     ~/.config/i3blocks: config/i3blocks
     ~/.config/picom.conf: config/picom/picom.conf
+
+    ~/.bashrc:
+      path: bashrc
+      force: true
+    ~/.bash_aliases: bash_aliases
+
+    ~/.zshrc: zshrc
+    ~/.oh-my-zsh/custom/plugins/:
+      glob: true
+      path: zsh/plugins/*
