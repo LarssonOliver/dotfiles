@@ -27,7 +27,9 @@
       force: true
     ~/.bash_aliases: bash_aliases
 
-    ~/.zshrc: zshrc
+    ~/.zshrc: 
+      path: zshrc
+      force: true
     ~/.oh-my-zsh/custom/plugins/:
       glob: true
       path: zsh/plugins/*
