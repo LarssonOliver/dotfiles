@@ -22,6 +22,8 @@
     ~/.config/i3blocks: config/i3blocks
     ~/.config/picom.conf: config/picom/picom.conf
 
+    ~/.local/share/wallpaper.jpg: config/wallpaper.jpg
+
     ~/.bashrc:
       path: bashrc
       force: true
