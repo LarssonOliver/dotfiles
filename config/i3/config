@@ -31,6 +31,9 @@ bindsym $mod+x exec ~/.config/scripts/lock.sh
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Volume control applet
+exec pasystray
+
 # Numlock enable
 exec_always --no-startup-id numlockx on
 
