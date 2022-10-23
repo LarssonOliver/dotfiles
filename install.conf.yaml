@@ -30,10 +30,15 @@
 
     ~/.gitconfig: gitconfig
 
+    ~/.shell: shell
+
+    ~/.bash_profile: 
+      path: bash_profile
+      force: true
     ~/.bashrc:
       path: bashrc
       force: true
-    ~/.bash_aliases: bash_aliases
+    ~/.bash: bash
 
     ~/.zshrc: 
       path: zshrc
@@ -41,13 +46,18 @@
     ~/.oh-my-zsh/custom/plugins/:
       glob: true
       path: zsh/plugins/*
+    ~/.zsh/:
+      glob: true
+      path: zsh/*
+      exclude:
+        - zsh/plugins
 
     ~/.ssh/config: ssh/config
 
 
 - shell:
-    - git submodule sync --recursive
-    - git submodule update --init --recursive
+    - [git submodule sync --recursive, Syncing git submodules]
+    - [git submodule update --init --recursive, Syncing git submodules]
     - >
       git clean -ffdx
       zsh/plugins/

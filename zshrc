@@ -1,31 +1,43 @@
-export ZSH="$HOME/.oh-my-zsh"
+# Functions
+source ~/.shell/functions.sh
 
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# Allow local customizations in the ~/.shell_local_before file
+if [ -f ~/.shell_local_before ]; then
+    source ~/.shell_local_before
+fi
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  dotenv
-  ssh-agent
-  zsh-completions
-  zsh-syntax-highlighting
-)
+# Allow local customizations in the ~/.zshrc_local_before file
+if [ -f ~/.zshrc_local_before ]; then
+    source ~/.zshrc_local_before
+fi
 
-zstyle :omz:plugins:ssh-agent lazy yes
+# External plugins (initialized before)
+source ~/.zsh/plugins_before.zsh
 
-source $ZSH/oh-my-zsh.sh
+# Settings
+source ~/.zsh/settings.zsh
 
-# User configuration
+# Bootstrap
+source ~/.shell/bootstrap.sh
 
-export PATH="$HOME/.local/bin:$PATH"
+# External settings
+source ~/.shell/external.sh
 
-if command -v starship >/dev/null
-then
-  eval "$(starship init zsh)"
-else
-  echo "Starship not installed, using default prompt"
+# Aliases
+source ~/.shell/aliases.sh
+
+# Custom prompt
+source ~/.zsh/prompt.zsh
+
+# External plugins (initialized after)
+source ~/.zsh/plugins_after.zsh
+
+# Allow local customizations in the ~/.shell_local_after file
+if [ -f ~/.shell_local_after ]; then
+    source ~/.shell_local_after
+fi
+
+# Allow local customizations in the ~/.zshrc_local_after file
+if [ -f ~/.zshrc_local_after ]; then
+    source ~/.zshrc_local_after
 fi
