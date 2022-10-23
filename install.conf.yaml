@@ -17,17 +17,18 @@
 - link:
     ~/.config/alacritty: config/alacritty
     ~/.config/gtk-3.0: config/gtk-3.0
-    ~/.gtkrc-2.0: config/gtk-2.0/gtkrc-2.0
+    ~/.gtkrc-2.0: gtkrc-2.0
     ~/.config/i3: config/i3
     ~/.config/i3blocks: config/i3blocks
-    ~/.config/picom.conf: config/picom/picom.conf
-    ~/.config/starship.toml: config/starship/starship.toml 
+    ~/.config/picom.conf: config/picom.conf
+    ~/.config/starship.toml: config/starship.toml 
 
     ~/.local/share/wallpaper/wallpaper.jpg: local/share/wallpaper/wallpaper.jpg
     ~/.local/bin/:
       path: local/bin/*
       glob: true
 
+    ~/.ssh/config: ssh/config
     ~/.gitconfig: gitconfig
 
     ~/.shell: shell
@@ -51,8 +52,6 @@
       path: zsh/*
       exclude:
         - zsh/plugins
-
-    ~/.ssh/config: ssh/config
 
 
 - shell:
