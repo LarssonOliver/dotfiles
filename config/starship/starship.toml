@@ -1,0 +1,9 @@
+# Editor completions
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Newline between prompts
+add_newline = false
+
+# Enable kubernetes module
+[kubernetes]
+disabled = false

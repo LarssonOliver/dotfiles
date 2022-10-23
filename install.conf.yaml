@@ -21,6 +21,7 @@
     ~/.config/i3: config/i3
     ~/.config/i3blocks: config/i3blocks
     ~/.config/picom.conf: config/picom/picom.conf
+    ~/.config/starship.toml: config/starship/starship.toml 
 
     ~/.local/share/wallpaper/wallpaper.jpg: local/share/wallpaper/wallpaper.jpg
     ~/.local/bin/:
