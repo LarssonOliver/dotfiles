@@ -1,4 +1,4 @@
-command=~/.config/i3blocks/scripts/$BLOCK_NAME
+command=~/.local/bin/$BLOCK_NAME
 
 # Guess the weather every 15 minutes
 [weather]

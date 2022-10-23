@@ -22,7 +22,10 @@
     ~/.config/i3blocks: config/i3blocks
     ~/.config/picom.conf: config/picom/picom.conf
 
-    ~/.local/share/wallpaper.jpg: config/wallpaper.jpg
+    ~/.local/share/wallpaper/wallpaper.jpg: local/share/wallpaper/wallpaper.jpg
+    ~/.local/bin/:
+      path: local/bin/*
+      glob: true
 
     ~/.bashrc:
       path: bashrc

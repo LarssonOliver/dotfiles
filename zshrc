@@ -21,6 +21,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH="$HOME/.local/bin:$PATH"
+
 if command -v starship >/dev/null
 then
   eval "$(starship init zsh)"

@@ -24,8 +24,8 @@ font pango:SauceCodePro Nerd Font Mono 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/scripts/lock.sh
-bindsym $mod+x exec ~/.config/scripts/lock.sh 
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/screenlock
+bindsym $mod+x exec ~/.local/bin/screenlock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -221,7 +221,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Set background
-exec_always feh --bg-scale ~/.local/share/wallpaper.jpg
+exec_always feh --bg-scale ~/.local/share/wallpaper/wallpaper.jpg
 
 # Start picom
 exec picom --config ~/.config/picom.conf
