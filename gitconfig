@@ -1,0 +1,15 @@
+[user]
+	name = Oliver Larsson
+	email = larsson.e.oliver@gmail.com
+	
+[init]
+	defaultBranch = main
+
+[alias]
+	adog = log --all --decorate --oneline --graph
+
+[pull]
+	rebase = preserve
+
+[url "ssh://git@github.com/"]
+	pushInsteadOf = https://github.com/

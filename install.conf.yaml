@@ -28,6 +28,8 @@
       path: local/bin/*
       glob: true
 
+    ~/.gitconfig: gitconfig
+
     ~/.bashrc:
       path: bashrc
       force: true
