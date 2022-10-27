@@ -40,7 +40,7 @@ cmp.setup({
 
     },
     sources = {
-        { name = "nvim-lsp" },
+        { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
     },
