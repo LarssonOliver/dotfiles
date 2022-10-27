@@ -23,6 +23,7 @@ cmp.setup({
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     formatting = {
         format = function(entry, vim_item)
@@ -40,12 +41,21 @@ cmp.setup({
 
     },
     sources = {
+        { name = "cmp_tabnine" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
     },
 })
 
+local tabnine = require("cmp_tabnine.config")
+tabnine.setup({
+    max_lines = 1000,
+    max_num_results = 20,
+    sort = true,
+    run_on_every_keystroke = true,
+    snippet_placeholder = "..",
+})
 
 local function config(_config)
     return vim.tbl_deep_extend("force", {
