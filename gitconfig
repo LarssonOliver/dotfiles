@@ -9,7 +9,7 @@
 	adog = log --all --decorate --oneline --graph
 
 [pull]
-	rebase = preserve
+	rebase = merges
 
 [url "ssh://git@github.com/"]
 	pushInsteadOf = https://github.com/
