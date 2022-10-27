@@ -23,6 +23,7 @@
     ~/.config/picom.conf: config/picom.conf
     ~/.config/starship.toml: config/starship.toml 
     ~/.config/dunst: config/dunst
+    ~/.config/nvim: config/nvim
 
     ~/.local/share/wallpaper/wallpaper.jpg: local/share/wallpaper/wallpaper.jpg
     ~/.local/bin/:
