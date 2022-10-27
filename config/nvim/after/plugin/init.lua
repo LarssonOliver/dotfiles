@@ -1,0 +1,2 @@
+vim.cmd(":TSInstall all");
+
