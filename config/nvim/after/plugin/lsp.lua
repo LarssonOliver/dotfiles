@@ -83,6 +83,8 @@ local function config(_config)
     }, _config or {})
 end
 
+require("lspconfig").bashls.setup(config())
+
 require("lspconfig").sumneko_lua.setup(config({
     settings = {
         Lua = {
