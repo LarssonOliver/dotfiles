@@ -25,6 +25,9 @@ return require("packer").startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
 
+    -- Commenting
+    use("terrortylor/nvim-comment")
+
     -- LSP
     use("neovim/nvim-lspconfig")
 
