@@ -5,6 +5,11 @@ plugins=(
 	dotenv
 	ssh-agent
 	zsh-completions
+
+    zsh-history-substring-search
+    zsh-autosuggestions
+
+    # Import this last
 	zsh-syntax-highlighting
 )
 
