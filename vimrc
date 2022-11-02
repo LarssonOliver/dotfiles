@@ -45,6 +45,8 @@ set completeopt="menu,menuone,noselect"
 
 let mapleader=" "
 
+inoremap <S-Tab> <C-d>
+
 nnoremap <leader>pv <cmd>Ex<CR>
 
 nnoremap <leader>x <cmd>!chmod +x %<CR>
