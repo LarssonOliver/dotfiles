@@ -85,6 +85,8 @@ end
 
 require("lspconfig").bashls.setup(config())
 
+require("lspconfig").yamlls.setup(config())
+
 require("lspconfig").sumneko_lua.setup(config({
     settings = {
         Lua = {
