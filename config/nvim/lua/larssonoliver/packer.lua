@@ -18,6 +18,7 @@ return require("packer").startup(function(use)
 
     -- Theme
     use("shaunsingh/nord.nvim")
+    use("kyazdani42/nvim-web-devicons")
 
     -- Statusline
     use({
@@ -30,6 +31,12 @@ return require("packer").startup(function(use)
 
     -- LSP
     use("neovim/nvim-lspconfig")
+
+    -- Telescope
+    use("nvim-lua/plenary.nvim")
+    use("nvim-lua/popup.nvim")
+    use("nvim-telescope/telescope.nvim")
+
 
     -- Autocompletion
     use("hrsh7th/cmp-nvim-lsp")

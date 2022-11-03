@@ -21,3 +21,18 @@ nmap("<leader>Y", "\"+Y")
 nnoremap("<C-_>", "<cmd>CommentToggle<CR>")
 vnoremap("<C-_>", ":'<,'>CommentToggle<CR>")
 
+
+-- Telescope
+nnoremap("<C-p>", function()
+    require("telescope.builtin").git_files()
+end)
+nnoremap("<leader>pf", function()
+    require("telescope.builtin").find_files()
+end)
+nnoremap("<leader>ps", function()
+    require("telescope.builtin").live_grep()
+end)
+nnoremap("<leader>pw", function()
+    require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
+end)
+
