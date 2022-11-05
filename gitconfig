@@ -12,9 +12,9 @@
 	rebase = merges
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+	pushInsteadOf = https://github.com/
 [url "git@github.com:LarssonOliver/"]
-	insteadOf = https://github.com/larssonoliver/
+	pushInsteadOf = https://github.com/larssonoliver/
 
 # Local customization file
 [include]
