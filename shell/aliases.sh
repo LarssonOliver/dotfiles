@@ -1,3 +1,5 @@
+#!/usr/bin/sh
+
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'

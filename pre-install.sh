@@ -7,5 +7,5 @@ if [ ! -d "$OMZDIR" ]; then
   /bin/sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
   echo 'Updating oh-my-zsh'
-  $OMZDIR/tools/upgrade.sh
+  "$OMZDIR"/tools/upgrade.sh
 fi

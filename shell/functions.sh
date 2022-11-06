@@ -1,3 +1,5 @@
+#!/usr/bin/sh
+
 path_remove() {
     PATH=$(echo -n "$PATH" | awk -v RS=: -v ORS=: "\$0 != \"$1\"" | sed 's/:$//')
 }
