@@ -57,10 +57,5 @@
       exclude:
         - zsh/plugins
 
-
 - shell:
-    - [git submodule sync --recursive, Syncing git submodules]
-    - [git submodule update --init --recursive, Syncing git submodules]
-    - >
-      git clean -ffdx
-      zsh/plugins/
+    - [sh post-install.sh, Running post installation script]
