@@ -18,6 +18,8 @@ dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
 
+require("larssonoliver.debugging.node")
+
 nnoremap("<Home>", function() dapui.toggle(1) end)
 nnoremap("<End>", function() dapui.toggle(2) end)
 
