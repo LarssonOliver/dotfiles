@@ -24,6 +24,7 @@
     ~/.config/starship.toml: config/starship.toml 
     ~/.config/dunst: config/dunst
     ~/.config/nvim: config/nvim
+    ~/.config/zathura: config/zathura
 
     ~/.vimrc: vimrc
 
