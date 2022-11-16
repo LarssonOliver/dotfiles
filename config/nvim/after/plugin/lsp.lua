@@ -89,6 +89,8 @@ require("lspconfig").yamlls.setup(config())
 
 require("lspconfig").texlab.setup(config())
 
+require("lspconfig").pyright.setup(config())
+
 require("lspconfig").sumneko_lua.setup(config({
     settings = {
         Lua = {
