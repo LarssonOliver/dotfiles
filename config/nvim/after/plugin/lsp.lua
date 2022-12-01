@@ -89,6 +89,11 @@ require("lspconfig").yamlls.setup(config())
 
 require("lspconfig").tsserver.setup(config())
 
+vim.g.markdown_fenced_languages = {
+  "ts=typescript"
+}
+require("lspconfig").denols.setup(config())
+
 require("lspconfig").texlab.setup(config())
 
 require("lspconfig").pyright.setup(config())
