@@ -87,12 +87,23 @@ require("lspconfig").bashls.setup(config())
 
 require("lspconfig").yamlls.setup(config())
 
-require("lspconfig").tsserver.setup(config())
+require("lspconfig").tsserver.setup(config({
+    root_dir = require("lspconfig").util.root_pattern(
+        "package.json",
+        "tsconfig.json",
+        "jsconfig.json"
+    )
+}))
 
 vim.g.markdown_fenced_languages = {
-  "ts=typescript"
+    "ts=typescript"
 }
-require("lspconfig").denols.setup(config())
+require("lspconfig").denols.setup(config({
+    root_dir = require("lspconfig").util.root_pattern(
+        "deno.json",
+        "deno.jsonc"
+    )
+}))
 
 require("lspconfig").texlab.setup(config())
 
