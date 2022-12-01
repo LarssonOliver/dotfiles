@@ -87,6 +87,8 @@ require("lspconfig").bashls.setup(config())
 
 require("lspconfig").yamlls.setup(config())
 
+require("lspconfig").tsserver.setup(config())
+
 require("lspconfig").texlab.setup(config())
 
 require("lspconfig").pyright.setup(config())
