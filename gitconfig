@@ -18,6 +18,9 @@
 [url "git@github.com:LarssonOliver/"]
 	insteadOf = git@github.com:larssonoliver/
 
+[url "git@cs.umu.se:"]
+	pushInsteadOf = https://git.cs.umu.se/
+
 # Local customization file
 [include]
 	path = ~/.gitconfig_local
