@@ -26,6 +26,14 @@ return require("packer").startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
 
+    -- Buffer resizing
+    use({
+        "kwkarlwang/bufresize.nvim",
+        config = function()
+            require("bufresize").setup()
+        end
+    })
+
     -- Commenting
     use("terrortylor/nvim-comment")
 
