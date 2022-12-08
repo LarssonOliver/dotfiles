@@ -32,6 +32,7 @@ dap.listeners.before.event_terminated["dapui_config"] = on_dap_exit
 dap.listeners.before.event_exited["dapui_config"] = on_dap_exit
 
 require("larssonoliver.debugging.node")
+require("larssonoliver.debugging.python")
 
 -- nnoremap("<Home>", function() dapui.toggle(1) end)
 -- nnoremap("<End>", function() dapui.toggle(2) end)
