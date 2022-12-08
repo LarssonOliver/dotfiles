@@ -11,7 +11,6 @@ require("nvim-tree").setup({
         group_empty = true,
         full_name = true,
         highlight_git = true,
-        highlight_open_files = "all"
     }
 })
 

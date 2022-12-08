@@ -36,7 +36,7 @@ require("larssonoliver.debugging.node")
 -- nnoremap("<Home>", function() dapui.toggle(1) end)
 -- nnoremap("<End>", function() dapui.toggle(2) end)
 
-nnoremap("<leader><leader>", function() dap.close() end)
+nnoremap("<leader><leader>", function() dap.terminate() end)
 
 nnoremap("<F5>", function() dap.continue() end)
 nnoremap("<F10>", function() dap.step_over() end)
