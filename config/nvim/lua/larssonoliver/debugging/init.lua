@@ -9,19 +9,32 @@ daptext.setup({})
 dapui.setup({})
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+    if not vim.g.larssonoliver_tree_visible_before_dap_set then
+        vim.g.larssonoliver_tree_visible_before_dap = require("nvim-tree.view").is_visible()
+        vim.g.larssonoliver_tree_visible_before_dap_set = true
+    end
+
+    require("nvim-tree.api").tree.close()
+    dapui.open({})
 end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-    dapui.close()
+
+local on_dap_exit = function()
+    dapui.close({})
+    if vim.g.larssonoliver_tree_visible_before_dap then
+        local api = require("nvim-tree.api")
+        api.tree.close()
+        require("nvim-tree.api").tree.toggle(false, true)
+    end
+    vim.g.larssonoliver_tree_visible_before_dap_set = false
 end
-dap.listeners.before.event_exited["dapui_config"] = function()
-    dapui.close()
-end
+
+dap.listeners.before.event_terminated["dapui_config"] = on_dap_exit
+dap.listeners.before.event_exited["dapui_config"] = on_dap_exit
 
 require("larssonoliver.debugging.node")
 
-nnoremap("<Home>", function() dapui.toggle(1) end)
-nnoremap("<End>", function() dapui.toggle(2) end)
+-- nnoremap("<Home>", function() dapui.toggle(1) end)
+-- nnoremap("<End>", function() dapui.toggle(2) end)
 
 nnoremap("<leader><leader>", function() dap.close() end)
 

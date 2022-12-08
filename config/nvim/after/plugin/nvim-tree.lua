@@ -10,7 +10,8 @@ require("nvim-tree").setup({
     renderer = {
         group_empty = true,
         full_name = true,
-        hightlight_git = true,
+        highlight_git = true,
+        highlight_open_files = "all"
     }
 })
 
