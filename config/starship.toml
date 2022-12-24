@@ -7,3 +7,6 @@ add_newline = false
 # Enable kubernetes module
 [kubernetes]
 disabled = false
+
+[aws]
+disabled = true
