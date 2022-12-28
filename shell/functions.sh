@@ -87,8 +87,6 @@ dotstat() {
         printf "%s" "Sync dotfiles now? [y/n] "
         read -r REPLY
         if [ "$REPLY" != "${REPLY#[Yy]}" ]; then
-            echo
-
             # Pull new changes from remote
             git pull > /dev/null 2>&1
         fi
