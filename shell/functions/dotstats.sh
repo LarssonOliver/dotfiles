@@ -213,7 +213,9 @@ dotstat_bootstrap_check_and_notify() {
 
     ICONPATH="$HOME/.local/share/icons/dotfiles.png"
     if ls "$ICONPATH" > /dev/null 2>&1; then
-        NOTIFYARGS="$ICONARGS $NOTIFYARGS -i $ICONPATH"
+        ICONARGS="--icon=$ICONPATH"
+    else
+        ICONARGS=""
     fi
 
     # Check if git is available
