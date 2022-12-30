@@ -29,6 +29,7 @@
     ~/.vimrc: vimrc
 
     ~/.local/share/wallpaper/wallpaper.jpg: local/share/wallpaper/wallpaper.jpg
+    ~/.local/share/icons/dotfiles.png: local/share/icons/dotfiles.png
     ~/.local/bin/:
       path: local/bin/*
       glob: true
