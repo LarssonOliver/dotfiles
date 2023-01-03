@@ -8,7 +8,6 @@ color=#A4C2F4
 [iface]
 color=#A3BE8C
 interval=10
-display_wifi_name=1
 
 [keyboard]
 interval=persist

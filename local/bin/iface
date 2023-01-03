@@ -47,13 +47,14 @@ case $BLOCK_BUTTON in
   3) echo -n "$IPADDR" | xclip -q -se c ;;
 esac
 
-if [[ "${display_wifi_name}" == "1" ]];
+# try to guess the wifi name
+WIFI_NAME=$(nmcli -t -f active,ssid dev wifi | grep -E '^yes' | cut -d: -f2)
+
+if [ -z "$WIFI_NAME" ];
 then
-  # try to guess the wifi name
-  WIFI_NAME=$(nmcli -t -f active,ssid dev wifi | grep -E '^yes' | cut -d: -f2)
-  message="$LABEL$WIFI_NAME ($IPADDR)"
+  message="${LABEL}Wired ($IPADDR)"
 else
-  message="$LABEL$IPADDR"
+  message="$LABEL$WIFI_NAME ($IPADDR)"
 fi
 
 #------------------------------------------------------------------------
