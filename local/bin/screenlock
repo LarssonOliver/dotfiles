@@ -6,6 +6,16 @@ scrot -o /tmp/screen_locked.png
 # Pixellate it 10x
 convert /tmp/screen_locked.png -scale 10% -blur 0x1 -resize 1000% /tmp/screen_locked.png
 
-# Lock screen displaying this image.
-i3lock -i /tmp/screen_locked.png
+# If dunst (notification display) is running
+if pgrep -x dunst > /dev/null; then
+    # Pause notifications
+    pkill -u "$USER" -USR1 dunst
+fi
 
+# Lock screen displaying this image.
+i3lock --nofork --ignore-empty-password --image /tmp/screen_locked.png
+
+if pgrep -x dunst > /dev/null; then
+    # Reenable notifications
+    pkill -u "$USER" -USR2 dunst
+fi
