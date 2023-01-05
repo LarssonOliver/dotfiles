@@ -9,7 +9,10 @@
 - clean: ["~", "~/.config"]
 
 - shell:
-    - [sh pre-install.sh, Running pre installation script]
+  - command: sh pre-install.sh 
+    description: Running pre installation script
+    stdout: true
+    stderr: true
 
 - create:
     ~/dev:
@@ -60,4 +63,5 @@
         - zsh/plugins
 
 - shell:
-    - [sh post-install.sh, Running post installation script]
+  - command: sh post-install.sh
+    description: Running post installation script]
