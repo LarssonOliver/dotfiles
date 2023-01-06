@@ -35,3 +35,7 @@ vim.g.maplocalleader = " "
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
+vim.g.markdown_fenced_languages = {
+    "ts=typescript"
+}
+
