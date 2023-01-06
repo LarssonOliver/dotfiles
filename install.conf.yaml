@@ -28,6 +28,7 @@
     ~/.config/dunst: config/dunst
     ~/.config/nvim: config/nvim
     ~/.config/zathura: config/zathura
+    ~/.config/fontconfig: config/fontconfig
 
     ~/.vimrc: vimrc
 
