@@ -1,10 +1,6 @@
 vim.g.mapleader = " "
 
-if vim.g.loaded_netrw == 1 then
-    vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-else
-    vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeFocus<CR>")
-end
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("i", "<S-Tab>", "<C-d>")
 
