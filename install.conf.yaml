@@ -65,3 +65,5 @@
 - shell:
   - command: sh post-install.sh
     description: Running post installation script]
+    stdout: true
+    stderr: true
