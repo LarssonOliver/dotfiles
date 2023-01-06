@@ -17,22 +17,6 @@ lsp.configure("sumneko_lua", {
     }
 })
 
-lsp.configure("tsserver", {
-    root_dir = require("lspconfig").util.root_pattern(
-        "package.json",
-        "tsconfig.json",
-        "jsconfig.json"
-    )
-})
-
--- Only run denols in deno projects
-lsp.configure("denols", {
-    root_dir = require("lspconfig").util.root_pattern(
-        "deno.json",
-        "deno.jsonc"
-    )
-})
-
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -75,6 +59,24 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+
+    -- https://dev.to/_hariti/solve-nvim-lsp-denols-vs-tsserver-clash-ofd
+    local active_clients = vim.lsp.get_active_clients()
+    if client.name == 'denols' then
+        for _, client_ in pairs(active_clients) do
+            -- stop tsserver if denols is already active
+            if client_.name == 'tsserver' then
+                client_.stop()
+            end
+        end
+    elseif client.name == 'tsserver' then
+        for _, client_ in pairs(active_clients) do
+            -- prevent tsserver from starting if denols is already active
+            if client_.name == 'denols' then
+                client.stop()
+            end
+        end
+    end
 end)
 
 lsp.setup()
