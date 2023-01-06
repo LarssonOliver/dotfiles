@@ -30,11 +30,26 @@ return require("packer").startup(function(use)
     -- Statusline
     use({
         "nvim-lualine/lualine.nvim",
-        requires = { { "kyazdani42/nvim-web-devicons" } }
+        requires = { { "kyazdani42/nvim-web-devicons" } },
+        config = function()
+            require("lualine").setup({
+                options = {
+                    theme = vim.g.larssonoliver_colorscheme
+                }
+            })
+        end
     })
 
     -- Commenting
-    use("terrortylor/nvim-comment")
+    use({
+        "terrortylor/nvim-comment",
+        config = function()
+            require("nvim_comment").setup({
+                comment_empty = false,
+                create_mappings = false,
+            })
+        end
+    })
 
     -- Telescope
     use({
@@ -80,19 +95,13 @@ return require("packer").startup(function(use)
     })
 
     -- Debugging
-    use("mfussenegger/nvim-dap")
-    use("rcarriga/nvim-dap-ui")
-    use("theHamsta/nvim-dap-virtual-text")
     use({
-        "mxsdev/nvim-dap-vscode-js",
-        requires = { "mfussenegger/nvim-dap" }
-    })
-
-    -- DAP servers
-    use({
-        "microsoft/vscode-js-debug",
-        opt = true,
-        run = "npm install --legacy-peer-deps && npm run compile"
+        "mfussenegger/nvim-dap",
+        requires = {
+            { "rcarriga/nvim-dap-ui" },
+            { "theHamsta/nvim-dap-virtual-text" },
+            { "mxsdev/nvim-dap-vscode-js" }
+        }
     })
 
     -- Automatically set up your configuration after cloning packer.nvim
