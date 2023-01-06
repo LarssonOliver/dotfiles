@@ -1,21 +1,21 @@
-local M = {}
+vim.g.mapleader = " "
 
-local function bind(op, outer_opts)
-    outer_opts = outer_opts or {noremap = true}
-    return function(lhs, rhs, opts)
-        opts = vim.tbl_extend("force",
-            outer_opts,
-            opts or {}
-        )
-        vim.keymap.set(op, lhs, rhs, opts)
-    end
+if vim.g.loaded_netrw == 1 then
+    vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+else
+    vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeFocus<CR>")
 end
 
-M.nmap = bind("n", {noremap = false})
-M.nnoremap = bind("n")
-M.vnoremap = bind("v")
-M.xnoremap = bind("x")
-M.inoremap = bind("i")
+vim.keymap.set("i", "<S-Tab>", "<C-d>")
 
-return M
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set("n", "<C-_>", "<cmd>CommentToggle<CR>")
+vim.keymap.set("v", "<C-_>", ":'<,'>CommentToggle<CR>")
+
+-- Telescope
+vim.keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {})
+vim.keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {})
+vim.keymap.set("n", "<leader>ps", require("telescope.builtin").live_grep, {})
 
