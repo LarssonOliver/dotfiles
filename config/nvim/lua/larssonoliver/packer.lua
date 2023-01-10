@@ -20,7 +20,6 @@ return require("packer").startup(function(use)
     use({
         "shaunsingh/nord.nvim",
         config = function()
-            vim.g.larssonoliver_colorscheme = "nord"
             vim.g.nord_borders = true
             vim.g.nord_contrast = true
             vim.cmd("colorscheme nord")
@@ -34,7 +33,7 @@ return require("packer").startup(function(use)
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = vim.g.larssonoliver_colorscheme
+                    theme = "nord"
                 }
             })
         end
