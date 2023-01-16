@@ -21,7 +21,7 @@ interval=5
 
 [cpu]
 interval=5
-LABEL=CPU 
+label=CPU 
 
 [time]
 interval=1
