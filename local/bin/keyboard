@@ -1,4 +1,9 @@
 #!/bin/bash
 
-xkb-switch -p
-xkb-switch -W
+(xkb-switch && xkb-switch -W) | while read line; do
+    case $line in 
+        us) echo "🇺🇸";;
+        se) echo "🇸🇪";;
+        *) ;;
+    esac
+done
