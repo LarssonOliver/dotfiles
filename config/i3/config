@@ -230,5 +230,5 @@ exec_always feh --bg-scale ~/.local/share/wallpaper/wallpaper2.png
 exec picom --config ~/.config/picom.conf
 
 # Start unclutter
-exec unclutter -grab
+exec unclutter
 
