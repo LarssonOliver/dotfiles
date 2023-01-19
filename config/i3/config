@@ -41,7 +41,7 @@ exec blueman-applet
 exec_always --no-startup-id numlockx on
 
 # Keymap toggle
-exec_always --no-startup-id setxkbmap -layout us,se -option '' -option 'grp:shifts_toggle' -option 'caps:none' 
+exec_always --no-startup-id setxkbmap -layout us,se -option '' -option 'grp:shifts_toggle' -option 'caps:escape'
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
