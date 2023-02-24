@@ -1,8 +1,24 @@
 # Editor completions
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """
+$all\
+$fill\
+$time\
+$line_break\
+$jobs\
+$battery\
+$status\
+$os\
+$container\
+$shell\
+$character"""
 
 # Newline between prompts
 add_newline = false
+
+[fill]
+symbol = " "
 
 # Enable kubernetes module
 [kubernetes]
@@ -10,3 +26,8 @@ disabled = false
 
 [aws]
 disabled = true
+
+[time]
+disabled = false
+style = "dimmed"
+format = "[at $time]($style)"
