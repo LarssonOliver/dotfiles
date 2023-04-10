@@ -46,6 +46,11 @@ return require("packer").startup(function(use)
             require("nvim_comment").setup({
                 comment_empty = false,
                 create_mappings = false,
+                hook = function()
+                    if vim.api.nvim_buf_get_option(0, "filetype") == "zig" then
+                        vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
+                    end
+                end
             })
         end
     })
