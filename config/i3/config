@@ -37,12 +37,6 @@ exec pasystray
 # Bluetooth applet
 exec blueman-applet
 
-# Numlock enable
-exec_always --no-startup-id numlockx on
-
-# Keymap toggle
-exec_always --no-startup-id setxkbmap -layout us,se -option '' -option 'grp:shifts_toggle' -option 'caps:escape'
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -221,6 +215,12 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 exec_always autorandr --change
+
+# Numlock enable
+exec_always --no-startup-id numlockx on
+
+# Keymap toggle
+exec_always --no-startup-id setxkbmap -layout us,se -option '' -option 'grp:shifts_toggle' -option 'caps:escape'
 
 # Set background
 # exec_always feh --bg-scale ~/.local/share/wallpaper/wallpaper.jpg
