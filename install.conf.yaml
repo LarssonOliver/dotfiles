@@ -29,6 +29,7 @@
     ~/.config/nvim: config/nvim
     ~/.config/zathura: config/zathura
     ~/.config/fontconfig: config/fontconfig
+    ~/.config/k9s/skin.yml: config/k9s/skin.yml
 
     ~/.vimrc: vimrc
 
