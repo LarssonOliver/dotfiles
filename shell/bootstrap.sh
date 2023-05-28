@@ -3,6 +3,10 @@
 # Add paths to system PATH.
 path_prepend "$HOME/.local/bin"
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+   eval "$(/opt/homebrew/bin/brew shellenv)" 
+fi
+
 # Check if neovim is installed, otherwise default to vim.
 if ! command -v nvim > /dev/null; then
     export EDITOR=vim

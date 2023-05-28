@@ -1,0 +1,35 @@
+cask_args appdir: "/Applications", require_sha: true
+
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+
+brew "ffmpeg"
+brew "git"
+brew "gnupg"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "grep"
+brew "helm"
+brew "jq"
+brew "macos-trash" if OS.mac?
+brew "mas" if OS.mac?
+brew "node"
+brew "openssh"
+brew "python"
+brew "starship"
+brew "terraform"
+brew "typescript"
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+
+cask "bitwarden"
+cask "docker"
+cask "firefox"
+cask "alacritty"
+cask "visual-studio-code"
+cask "zotero" # no arm64_big_sur yet
+
