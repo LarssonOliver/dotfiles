@@ -10,3 +10,12 @@ git clean -ffdx \
 #    echo "Running NeoVim PackerSync"
 #    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 #fi
+
+
+if command -v yabai > /dev/null; then
+    yabai --start-service
+fi
+
+if command -v skhd > /dev/null; then
+    skhd --start-service
+fi

@@ -67,6 +67,9 @@
       exclude:
         - zsh/plugins
 
+    ~/.yabairc: yabairc
+    ~/.skhdrc: skhdrc
+
 - shell:
   - command: sh post-install.sh
     description: Running post installation script]
