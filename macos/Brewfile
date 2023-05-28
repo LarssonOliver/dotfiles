@@ -5,6 +5,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "homebrew/cask-fonts"
 
 brew "ffmpeg"
 brew "git"
@@ -25,6 +26,9 @@ brew "typescript"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
+brew "nvim"
+brew "fontconfig"
+brew "ripgrep"
 
 cask "bitwarden"
 cask "docker"
@@ -32,4 +36,5 @@ cask "firefox"
 cask "alacritty"
 cask "visual-studio-code"
 cask "zotero" # no arm64_big_sur yet
+cask "font-sauce-code-pro-nerd-font"
 
