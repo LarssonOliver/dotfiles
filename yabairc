@@ -57,3 +57,4 @@ yabai -m rule --add app='Settings$' manage=off
 
 # app specific rules
 yabai -m rule --add app='^Zotero$' title='General' manage=off
+yabai -m rule --add app="^Calendar$" title="(General|^$)" manage=off
