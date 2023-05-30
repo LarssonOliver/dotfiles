@@ -3,29 +3,29 @@ font:
   # Normal (roman) font face
   normal:
     # family: Source Code Pro for Powerline
-    family: monospace
-    # family: SauceCodePro Nerd Font
+    # family: monospace
+    family: SauceCodePro Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Italic font face
   bold:
     # family: Source Code Pro for Powerline
-    family: monospace
-    # family: SauceCodePro Nerd Font
+    # family: monospace
+    family: SauceCodePro Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
     # family: Source Code Pro for Powerline
-    family: monospace
-    # family: SauceCodePro Nerd Font
+    # family: monospace
+    family: SauceCodePro Nerd Font
     # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Point size
-  size: 8.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -46,7 +46,8 @@ font:
   builtin_box_drawing: true
 
 key_bindings:
-  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: Slash, mods: Control, chars: "\x1f" }
 
 window:
   # Window dimensions (changes require restart)
