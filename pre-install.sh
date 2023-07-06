@@ -1,9 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Bootstrap homebrew if on mac.
 if [[ $(uname -s) == "Darwin" ]]; then
     (
-        cd macos
+        cd macos || exit
         sh bootstrap.sh
     )
 fi
@@ -14,5 +14,5 @@ if [ ! -d "$OMZDIR" ]; then
   /bin/sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
   cd "$OMZDIR" || exit
-  sh tools/upgrade.sh
+  tools/upgrade.sh
 fi

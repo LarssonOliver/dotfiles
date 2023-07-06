@@ -9,7 +9,7 @@
 - clean: ["~", "~/.config"]
 
 - shell:
-  - command: sh pre-install.sh 
+  - command: bash pre-install.sh 
     description: Running pre installation script
     stdout: true
     stderr: true
