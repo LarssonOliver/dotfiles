@@ -17,6 +17,10 @@ lsp.configure("lua_ls", {
     }
 })
 
+require("lspconfig").volar.setup({
+    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+})
+
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -65,17 +69,17 @@ lsp.on_attach(function(client, bufnr)
 
     -- https://dev.to/_hariti/solve-nvim-lsp-denols-vs-tsserver-clash-ofd
     local active_clients = vim.lsp.get_active_clients()
-    if client.name == 'denols' then
+    if client.name == "denols" then
         for _, client_ in pairs(active_clients) do
             -- stop tsserver if denols is already active
-            if client_.name == 'tsserver' then
+            if client_.name == "tsserver" then
                 client_.stop()
             end
         end
-    elseif client.name == 'tsserver' then
+    elseif client.name == "tsserver" then
         for _, client_ in pairs(active_clients) do
             -- prevent tsserver from starting if denols is already active
-            if client_.name == 'denols' then
+            if client_.name == "denols" then
                 client.stop()
             end
         end
@@ -87,4 +91,3 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
-
