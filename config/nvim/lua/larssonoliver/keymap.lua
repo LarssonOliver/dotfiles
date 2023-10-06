@@ -8,6 +8,11 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<C-_>", "<cmd>CommentToggle<CR>")
 vim.keymap.set("v", "<C-_>", ":'<,'>CommentToggle<CR>")
 
+vim.keymap.set("n", "<C-H>", "<C-W>h")
+vim.keymap.set("n", "<C-J>", "<C-W>j")
+vim.keymap.set("n", "<C-K>", "<C-W>k")
+vim.keymap.set("n", "<C-L>", "<C-W>l")
+
 -- Telescope
 vim.keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {})
 vim.keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {})
