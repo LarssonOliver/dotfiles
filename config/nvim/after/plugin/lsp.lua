@@ -92,14 +92,13 @@ require("lspconfig").yamlls.setup({
     settings = {
         redhat = {
             telemetry = {
-                enabled = false
-            }
-        },
-        schemaStore = {
-            enable = true,
-            url = "https://www.schemastore.org/api/json/catalog.json",
+                enabled = false,
+            },
         },
         yaml = {
+            -- Disable alphabetic ordering of keys warning.
+            keyOrdering = false,
+
             -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw
             schemas = {
                 kubernetes = "*.yaml",
