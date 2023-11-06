@@ -1,3 +1,5 @@
+# vi: filetype=gitconfig
+
 [user]
 	name = Oliver Larsson
 	email = larsson.e.oliver@gmail.com
