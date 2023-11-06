@@ -1,3 +1,5 @@
+# vi: filetype=sshconfig
+
 Include config.local
 
 AddKeysToAgent yes
