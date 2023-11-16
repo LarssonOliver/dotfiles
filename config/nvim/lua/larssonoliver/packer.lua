@@ -111,6 +111,14 @@ return require("packer").startup(function(use)
         }
     })
 
+    -- Copilot
+    use({
+        "github/copilot.vim",
+        config = function()
+            vim.g.copilot_assume_mapped = true
+        end
+    })
+
     -- Debugging
     use({
         "mfussenegger/nvim-dap",
