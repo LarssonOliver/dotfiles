@@ -111,6 +111,39 @@ return require("packer").startup(function(use)
         }
     })
 
+    use({
+        'williamboman/mason.nvim',
+        config = function()
+            require("mason").setup({})
+        end
+    })
+
+    use({
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    "tsserver",
+                    "dockerls",
+                    "bashls",
+                    "yamlls",
+                    "cmake",
+                    "volar",
+                    "lua_ls",
+                    "pyright",
+                    "gopls",
+                    "denols",
+                    "marksman",
+                    "ltex",
+                    "clangd",
+                },
+                handlers = {
+                    require("lsp-zero").default_setup,
+                },
+            })
+        end
+    })
+
     -- Copilot, lazy loaded, initiate with ":Copilot auth"
     use({
         "zbirenbaum/copilot.lua",
