@@ -16,7 +16,14 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+    mapping = cmp_mappings,
+    sources = {
+        {name = "copilot"},
+        {name = "nvim_lsp"},
+        {name = "buffer"},
+        {name = "path"},
+        {name = "luasnip"},
+    },
 })
 
 lsp.set_preferences({

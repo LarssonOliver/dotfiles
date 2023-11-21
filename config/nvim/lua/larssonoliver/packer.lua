@@ -111,11 +111,31 @@ return require("packer").startup(function(use)
         }
     })
 
-    -- Copilot
+    -- Copilot, lazy loaded, initiate with ":Copilot auth"
     use({
-        "github/copilot.vim",
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
         config = function()
-            vim.g.copilot_assume_mapped = true
+            require("copilot").setup({
+                panel = {
+                    enabled = false,
+                },
+                suggestion = {
+                    enabled = false,
+                },
+                filetypes = {
+                    -- markdown = false,
+                },
+            })
+        end,
+    })
+
+    use({
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
         end
     })
 
