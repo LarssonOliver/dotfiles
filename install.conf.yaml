@@ -67,8 +67,12 @@
       exclude:
         - zsh/plugins
 
-    ~/.yabairc: yabairc
-    ~/.skhdrc: skhdrc
+    ~/.yabairc: 
+      path: yabairc
+      if: '[ `uname` = Darwin ]'
+    ~/.skhdrc:
+      path: skhdrc
+      if: '[ `uname` = Darwin ]'
 
 - shell:
   - command: sh post-install.sh
