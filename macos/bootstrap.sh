@@ -8,6 +8,8 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
+echo "Administrator password required to install Homebrew and packages."
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -18,13 +20,17 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Homebrew                                                                    #
 ###############################################################################
 
-# Install Homebrew: https://docs.brew.sh/Installation
-script_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
-NONINTERACTIVE=1 /usr/bin/env bash -c "$(curl -fsSL $script_url)" 
+if ! command -v brew &> /dev/null; then
+    # Install Homebrew: https://docs.brew.sh/Installation
+    script_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+    NONINTERACTIVE=1 /usr/bin/env bash -c "$(curl -fsSL $script_url)" 
 
-if ! command -v brew &>/dev/null; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    command -v brew &>/dev/null || exit 1
+    if ! command -v brew &>/dev/null; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        command -v brew &>/dev/null || exit 1
+    fi
+else 
+    echo "Homebrew already installed."
 fi
 
 brew analytics off
