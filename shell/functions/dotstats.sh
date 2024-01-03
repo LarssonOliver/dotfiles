@@ -62,7 +62,7 @@ dotstat_dotfiles() {
         if [ "$REPLY" != "${REPLY#[Yy]}" ]; then
             # Pull new changes from remote
             git pull > /dev/null 2>&1
-            sh install > /dev/null
+            bash install > /dev/null
         fi
     fi
 }
@@ -124,7 +124,7 @@ dotstat_bootstrap() {
         if [ "$REPLY" != "${REPLY#[Yy]}" ]; then
             # Pull new changes from remote
             git pull > /dev/null 2>&1
-            sh install > /dev/null
+            bash install > /dev/null
         fi
     fi
 }
