@@ -1,3 +1,10 @@
+import = [
+    "~/.config/alacritty/linux.toml",
+
+    # This is ignored if not found, overwrites linux if found. 
+    "~/.config/alacritty/darwin.toml",
+]
+
 [colors.bright]
 black = "#4C566A"
 blue = "#81A1C1"
@@ -24,10 +31,8 @@ foreground = "#D8DEE9"
 
 [font]
 builtin_box_drawing = true
-size = 8.0
 
 [font.normal]
-family = "monospace"
 style = "Regular"
 
 [font.bold]
