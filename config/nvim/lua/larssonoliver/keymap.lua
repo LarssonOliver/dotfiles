@@ -18,5 +18,5 @@ vim.keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {})
 vim.keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {})
 vim.keymap.set("n", "<leader>ps", require("telescope.builtin").live_grep, {})
 
-
-
+-- clangd
+vim.keymap.set("n", "<leader>gh", ":ClangdSwitchSourceHeader<CR>", {})
