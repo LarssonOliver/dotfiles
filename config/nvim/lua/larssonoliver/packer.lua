@@ -47,8 +47,8 @@ return require("packer").startup(function(use)
                 comment_empty = false,
                 create_mappings = false,
                 hook = function()
-                    local slash_comments = { "cpp", "c", "zig" }
-                    for _, v in pairs(slash_comments) do
+                    local slash_comment_filetypes = { "cpp", "c", "zig", "openscad" }
+                    for _, v in pairs(slash_comment_filetypes) do
                         if vim.api.nvim_buf_get_option(0, "filetype") == v then
                             vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
                             break
