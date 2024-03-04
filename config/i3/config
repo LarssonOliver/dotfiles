@@ -225,7 +225,7 @@ exec_always autorandr --change
 exec_always --no-startup-id numlockx on
 
 # Keymap toggle
-exec_always --no-startup-id setxkbmap -layout us,se -option '' -option 'grp:shifts_toggle' -option 'caps:escape'
+exec_always --no-startup-id bash -c "sleep 10 && setxkbmap -layout us,se -option '' -option 'grp:shifts_toggle' -option 'caps:escape'"
 
 # Set background
 # exec_always feh --bg-scale ~/.local/share/wallpaper/wallpaper.jpg
