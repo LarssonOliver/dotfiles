@@ -14,6 +14,9 @@
 [pull]
 	rebase = merges
 
+[push]
+    autoSetupRemote = true
+
 [url "git@github.com:"]
 	pushInsteadOf = https://github.com/
 [url "git@github.com:LarssonOliver/"]
