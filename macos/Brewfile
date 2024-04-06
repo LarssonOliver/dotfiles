@@ -33,6 +33,7 @@ brew "ripgrep"
 brew "yabai"
 brew "tree"
 brew "skhd"
+brew "tmux"
 
 cask "bitwarden"
 cask "docker"

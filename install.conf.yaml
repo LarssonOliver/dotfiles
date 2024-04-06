@@ -32,6 +32,9 @@
 
     ~/.vimrc: vimrc
 
+    ~/.tmux: tmux
+    ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
+
     ~/.config/alacritty/: 
       glob: true
       path: config/alacritty/*

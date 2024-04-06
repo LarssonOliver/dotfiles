@@ -4,6 +4,7 @@ plugins=(
 	git
 	dotenv
 	ssh-agent
+    tmux
 	zsh-completions
 
     zsh-history-substring-search

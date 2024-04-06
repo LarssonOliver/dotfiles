@@ -72,6 +72,9 @@ return require("packer").startup(function(use)
         run = ":TSUpdate"
     })
 
+    -- TMUX
+    use("christoomey/vim-tmux-navigator")
+
     -- Editorconfig
     use("gpanders/editorconfig.nvim")
 
