@@ -1,0 +1,3 @@
+sync_address = "https://atuin.larssonoliver.com"
+sync_frequency = "30s"
+keymap_mode = "vim-normal"
