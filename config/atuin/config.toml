@@ -1,3 +1,12 @@
 sync_address = "https://atuin.larssonoliver.com"
 sync_frequency = "30s"
-keymap_mode = "vim-normal"
+keymap_mode = "vim-insert"
+update_check = false
+style = "compact"
+enter_accept = true
+
+[sync]
+records = true
+
+[dotfiles]
+enabled = false
