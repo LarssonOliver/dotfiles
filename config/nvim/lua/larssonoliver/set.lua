@@ -42,3 +42,5 @@ vim.g.markdown_fenced_languages = {
     "ts=typescript"
 }
 
+vim.g.editorconfig = true
+

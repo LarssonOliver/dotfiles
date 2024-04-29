@@ -75,9 +75,6 @@ return require("packer").startup(function(use)
     -- TMUX
     use("christoomey/vim-tmux-navigator")
 
-    -- Editorconfig
-    use("gpanders/editorconfig.nvim")
-
     -- TeX
     use("lervag/vimtex")
 
