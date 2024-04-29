@@ -32,6 +32,9 @@
 	pushInsteadOf = https://git.ac2.se/
 	pushInsteadOf = git@git.accum.se: 
 
+[url "git@git.larssonoliver.com:"]
+    pushInsteadOf = https://git.larssonoliver.com/
+
 # Local customization file
 [include]
 	path = ~/.gitconfig_local
