@@ -114,8 +114,7 @@ local cmp_format = lsp_zero.cmp_format()
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 require("luasnip.loaders.from_vscode").lazy_load()
-
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
 
 cmp.setup({
     formatting = cmp_format,

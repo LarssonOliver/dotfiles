@@ -36,11 +36,10 @@ vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 vim.g.markdown_fenced_languages = {
     "ts=typescript"
 }
 
 vim.g.editorconfig = true
-
