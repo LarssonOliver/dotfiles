@@ -59,6 +59,15 @@ return require("packer").startup(function(use)
         end
     })
 
+    -- Git conflicts
+    use({
+        "akinsho/git-conflict.nvim",
+        tag = "*",
+        config = function()
+            require("git-conflict").setup()
+        end
+    })
+
     -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
