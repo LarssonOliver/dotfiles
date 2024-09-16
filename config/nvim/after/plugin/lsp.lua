@@ -19,14 +19,14 @@ require("mason-lspconfig").setup({
             require("lspconfig").volar.setup({})
         end,
 
-        tsserver = function()
+        ts_ls = function()
             local vue_typescript_plugin = require("mason-registry")
                 .get_package("vue-language-server")
                 :get_install_path()
                 .. "/node_modules/@vue/language-server"
                 .. "/node_modules/@vue/typescript-plugin"
 
-            require("lspconfig").tsserver.setup({
+            require("lspconfig").ts_ls.setup({
                 init_options = {
                     plugins = {
                         {
@@ -182,18 +182,18 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
     vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 
-    -- https://dev.to/_hariti/solve-nvim-lsp-denols-vs-tsserver-clash-ofd
+    -- https://dev.to/_hariti/solve-nvim-lsp-denols-vs-ts_ls-clash-ofd
     local active_clients = vim.lsp.get_active_clients()
     if client.name == "denols" then
         for _, client_ in pairs(active_clients) do
-            -- stop tsserver if denols is already active
-            if client_.name == "tsserver" then
+            -- stop ts_ls if denols is already active
+            if client_.name == "ts_ls" then
                 client_.stop()
             end
         end
-    elseif client.name == "tsserver" then
+    elseif client.name == "ts_ls" then
         for _, client_ in pairs(active_clients) do
-            -- prevent tsserver from starting if denols is already active
+            -- prevent ts_ls from starting if denols is already active
             if client_.name == "denols" then
                 client.stop()
             end
