@@ -29,7 +29,7 @@ return require("packer").startup(function(use)
     -- Statusline
     use({
         "nvim-lualine/lualine.nvim",
-        requires = { { "kyazdani42/nvim-web-devicons" } },
+        requires = { { "nvim-tree/nvim-web-devicons" } },
         config = function()
             require("lualine").setup({
                 options = {
@@ -73,6 +73,24 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim",
         branch = "0.1.x",
         requires = { { "nvim-lua/plenary.nvim" } }
+    })
+
+    -- Oil
+    use({
+        "stevearc/oil.nvim",
+        requires = { { "nvim-tree/nvim-web-devicons" } },
+        config = function()
+            require("oil").setup({
+                columns = {
+                    "icon",
+                    "permissions",
+                },
+                keymaps = {
+                    -- Using to open telescope.
+                    ["<C-p>"] = false,
+                },
+            })
+        end
     })
 
     -- Treesitter

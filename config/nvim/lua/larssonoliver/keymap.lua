@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("i", "<S-Tab>", "<C-d>")
 
@@ -17,6 +17,9 @@ vim.keymap.set("n", "<C-L>", "<cmd> TmuxNavigateRight<CR>")
 vim.keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {})
 vim.keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {})
 vim.keymap.set("n", "<leader>ps", require("telescope.builtin").live_grep, {})
+
+-- Oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- clangd
 vim.keymap.set("n", "<leader>gh", ":ClangdSwitchSourceHeader<CR>", {})
