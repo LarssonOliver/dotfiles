@@ -233,7 +233,7 @@ exec_always --no-startup-id bash -c "setxkbmap -layout us,se -option '' -option 
 exec_always feh --bg-scale ~/.local/share/wallpaper/wallpaper3.png
 
 # Start picom
-exec picom --config ~/.config/picom.conf
+exec_always if ! pidof picom; then picom --config ~/.config/picom.conf; fi
 
 # Start unclutter
 exec unclutter
