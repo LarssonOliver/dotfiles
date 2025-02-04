@@ -48,6 +48,16 @@ require("mason-lspconfig").setup({
             })
         end,
 
+        denols = function()
+            require("lspconfig").denols.setup({
+                init_options = {
+                    lint = true,
+                    unstable = true,
+                },
+                root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
+            })
+        end,
+
         yamlls = function()
             require("lspconfig").yamlls.setup({
                 settings = {

@@ -42,6 +42,7 @@ return require("packer").startup(function(use)
     -- Commenting
     use({
         "terrortylor/nvim-comment",
+        requires = { { "JoosepAlviste/nvim-ts-context-commentstring" } },
         config = function()
             require("nvim_comment").setup({
                 comment_empty = false,
@@ -53,6 +54,9 @@ return require("packer").startup(function(use)
                             vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
                             break
                         end
+                    end
+                    if vim.api.nvim_buf_get_option(0, "filetype") == "vue" then
+                        require("ts_context_commentstring.internal").update_commentstring()
                     end
                 end
             })
