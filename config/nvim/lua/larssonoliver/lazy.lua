@@ -110,10 +110,10 @@ return require("lazy").setup({
         },
 
         -- TMUX
-        "christoomey/vim-tmux-navigator",
+        { "christoomey/vim-tmux-navigator" },
 
         -- TeX
-        "lervag/vimtex",
+        { "lervag/vimtex" },
 
         -- Indent visuals
         {
@@ -129,29 +129,28 @@ return require("lazy").setup({
         },
 
         -- LSP
+        { 'neovim/nvim-lspconfig' },
         {
-            'VonHeikemen/lsp-zero.nvim',
-            branch = "v3.x",
+            'williamboman/mason.nvim',
+            dependencies = { 'williamboman/mason-lspconfig.nvim' }
+        },
+
+        -- Autocompletion
+        {
+            'hrsh7th/nvim-cmp',
             dependencies = {
-                -- LSP Support
-                { 'neovim/nvim-lspconfig' },
-                { 'williamboman/mason.nvim' },
-                { 'williamboman/mason-lspconfig.nvim' },
-
-                -- Autocompletion
-                { 'hrsh7th/nvim-cmp' },
-                { 'hrsh7th/cmp-buffer' },
-                { 'hrsh7th/cmp-path' },
-                { 'saadparwaiz1/cmp_luasnip' },
-                { 'hrsh7th/cmp-nvim-lsp' },
-                { 'hrsh7th/cmp-nvim-lua' },
-
-                -- Snippets
-                { 'L3MON4D3/LuaSnip' },
-                -- Snippet Collection (Optional)
-                { 'rafamadriz/friendly-snippets' },
+                'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-path',
+                'saadparwaiz1/cmp_luasnip',
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-nvim-lua',
             }
         },
+
+        -- Snippets
+        { 'L3MON4D3/LuaSnip' },
+        -- Snippet Collection (Optional)
+        { 'rafamadriz/friendly-snippets' },
 
         -- Copilot, lazy loaded, initiate with ":Copilot auth"
         {
