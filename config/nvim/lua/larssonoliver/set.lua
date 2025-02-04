@@ -43,3 +43,5 @@ vim.g.markdown_fenced_languages = {
 }
 
 vim.g.editorconfig = true
+
+vim.opt.signcolumn = "yes"
