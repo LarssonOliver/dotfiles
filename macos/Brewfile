@@ -30,9 +30,7 @@ brew "zsh-syntax-highlighting"
 brew "nvim"
 brew "fontconfig"
 brew "ripgrep"
-brew "yabai"
 brew "tree"
-brew "skhd"
 brew "tmux"
 
 cask "bitwarden"
@@ -42,4 +40,5 @@ cask "alacritty"
 cask "visual-studio-code"
 cask "zotero" # no arm64_big_sur yet
 cask "font-sauce-code-pro-nerd-font"
+cask "nikitabobko/tap/aerospace"
 

@@ -29,6 +29,7 @@
     ~/.config/zathura: config/zathura
     ~/.config/fontconfig: config/fontconfig
     ~/.config/k9s: config/k9s
+    ~/.config/aerospace: config/aerospace
 
     ~/.config/atuin: 
       path: config/atuin
