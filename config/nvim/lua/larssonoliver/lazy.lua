@@ -106,7 +106,20 @@ return require("lazy").setup({
         -- Treesitter
         {
             "nvim-treesitter/nvim-treesitter",
-            build = ":TSUpdate"
+            build = ":TSUpdate",
+            config = function()
+                require("nvim-treesitter.configs").setup({
+                    ensure_installed = { "javascript", "typescript", "c", "lua", "yaml" },
+                    sync_install = false,
+                    auto_install = true,
+                    ignore_install = { "latex" },
+                    highlight = {
+                        enable = true,
+                        disable = { "latex" },
+                        additional_vim_regex_highlighting = true,
+                    },
+                })
+            end
         },
 
         -- TMUX
