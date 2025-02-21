@@ -113,7 +113,10 @@ return require("lazy").setup({
         { "christoomey/vim-tmux-navigator" },
 
         -- TeX
-        { "lervag/vimtex" },
+        {
+            "lervag/vimtex",
+            lazy = false,
+        },
 
         -- Indent visuals
         {
