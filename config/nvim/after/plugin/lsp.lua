@@ -81,6 +81,8 @@ require("mason-lspconfig").setup({
                     "typescript.tsx",
                     "vue",
                 },
+                root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json"),
+                single_file_support = false,
             })
         end,
 
@@ -91,6 +93,7 @@ require("mason-lspconfig").setup({
                     unstable = true,
                 },
                 root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
+                single_file_support = false,
             })
         end,
 
