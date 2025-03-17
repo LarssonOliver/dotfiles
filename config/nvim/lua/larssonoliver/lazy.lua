@@ -40,6 +40,9 @@ return require("lazy").setup({
                 require("lualine").setup({
                     options = {
                         theme = "nord"
+                    },
+                    sections = {
+                        lualine_x = { 'copilot', 'encoding', 'fileformat', 'filetype' }
                     }
                 })
             end
@@ -201,11 +204,13 @@ return require("lazy").setup({
 
         {
             "zbirenbaum/copilot-cmp",
-            dependencies = { "copilot.lua" },
+            dependencies = { "zbirenbaum/copilot.lua" },
             config = function()
                 require("copilot_cmp").setup()
             end
         },
+
+        { 'AndreM222/copilot-lualine' },
 
         -- Debugging
         {
