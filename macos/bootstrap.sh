@@ -40,7 +40,9 @@ brew bundle check || brew bundle
 # Yabai
 ###############################################################################
 
-echo "$(whoami) ALL=(root) NOPASSWD: $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+if command -v yabai &> /dev/null; then
+    echo "$(whoami) ALL=(root) NOPASSWD: $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+fi
 
 ###############################################################################
 # General UI/UX                                                               #
