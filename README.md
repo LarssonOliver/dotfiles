@@ -4,8 +4,8 @@
 
 ![GitHub License](https://img.shields.io/github/license/larssonoliver/dotfiles?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/larssonoliver/dotfiles?style=flat-square)
-![Static Badge](https://img.shields.io/badge/Platform-Linux-purple?style=flat-square)
-![Static Badge](https://img.shields.io/badge/Platform-MacOS-blue?style=flat-square)
+![Static Badge](https://img.shields.io/badge/platform-Linux-purple?style=flat-square)
+![Static Badge](https://img.shields.io/badge/platform-MacOS-blue?style=flat-square)
 
 </div>
 
