@@ -61,7 +61,7 @@ In the terminal, I'm a [Source Code Pro](https://fonts.google.com/specimen/Sourc
 
 ## License
 
-This repository is licensed under the MIT License. See the LICENSE file for more information.
+This repository is licensed under the ***Unlicense*** license. Do whatever you want. 🤷 See the LICENSE file for more information.
 
 ---
 
