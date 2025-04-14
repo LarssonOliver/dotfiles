@@ -182,35 +182,35 @@ return require("lazy").setup({
         -- Snippet Collection (Optional)
         { 'rafamadriz/friendly-snippets' },
 
-        -- -- Copilot, lazy loaded, initiate with ":Copilot auth"
-        -- {
-        --     "zbirenbaum/copilot.lua",
-        --     cmd = "Copilot",
-        --     event = "InsertEnter",
-        --     config = function()
-        --         require("copilot").setup({
-        --             panel = {
-        --                 enabled = false,
-        --             },
-        --             suggestion = {
-        --                 enabled = false,
-        --             },
-        --             filetypes = {
-        --                 -- markdown = false,
-        --             },
-        --         })
-        --     end,
-        -- },
+        -- Copilot, lazy loaded, initiate with ":Copilot auth"
+        {
+            "zbirenbaum/copilot.lua",
+            cmd = "Copilot",
+            event = "InsertEnter",
+            config = function()
+                require("copilot").setup({
+                    panel = {
+                        enabled = false,
+                    },
+                    suggestion = {
+                        enabled = false,
+                    },
+                    filetypes = {
+                        -- markdown = false,
+                    },
+                })
+            end,
+        },
 
-        -- {
-        --     "zbirenbaum/copilot-cmp",
-        --     dependencies = { "zbirenbaum/copilot.lua" },
-        --     config = function()
-        --         require("copilot_cmp").setup()
-        --     end
-        -- },
+        {
+            "zbirenbaum/copilot-cmp",
+            dependencies = { "zbirenbaum/copilot.lua" },
+            config = function()
+                require("copilot_cmp").setup()
+            end
+        },
 
-        -- { 'AndreM222/copilot-lualine' },
+        { 'AndreM222/copilot-lualine' },
 
         -- Debugging
         {
