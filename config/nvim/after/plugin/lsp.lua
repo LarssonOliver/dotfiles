@@ -9,6 +9,18 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
+        "denols",
+        "bashls",
+        "cmake",
+        "cssls",
+        "emmet_language_server",
+        "eslint",
+        "gopls",
+        "ltex",
+        "marksman",
+        "ts_ls",
+        "volar",
+        "yamlls",
     },
     handlers = {
         function(server_name) -- Default handler
