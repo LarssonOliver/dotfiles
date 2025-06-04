@@ -158,6 +158,15 @@ return require("lazy").setup({
             end,
         },
 
+        -- CSV Visualization
+        {
+            "hat0uma/csvview.nvim",
+            opts = {
+                parser = { comments = { "#", "//" } },
+            },
+            cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+        },
+
         -- LSP
         { 'neovim/nvim-lspconfig' },
         {
