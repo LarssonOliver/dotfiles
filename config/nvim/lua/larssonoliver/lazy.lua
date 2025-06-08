@@ -164,7 +164,7 @@ return require("lazy").setup({
             opts = {
                 parser = { comments = { "#", "//" } },
             },
-            cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+            cmd = { --[[ "CsvViewEnable", "CsvViewDisable", ]] "CsvViewToggle" },
         },
 
         -- LSP
