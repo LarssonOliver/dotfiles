@@ -11,6 +11,10 @@ set selection-clipboard   clipboard
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 
+## DATABASE SETTINGS
+# ------------------
+set database sqlite
+
 # MAPPINGS
 # ---------------
 map i recolor
