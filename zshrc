@@ -29,6 +29,9 @@ source ~/.shell/aliases.sh
 # Custom prompt
 source ~/.zsh/prompt.zsh
 
+# CLI Completions
+source ~/.zsh/completions.zsh
+
 # External plugins (initialized after)
 source ~/.zsh/plugins_after.zsh
 
