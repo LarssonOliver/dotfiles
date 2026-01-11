@@ -142,6 +142,11 @@ require("mason-lspconfig").setup({
                             "*docker-compose*.{yml,yaml}",
                             ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] =
                             "*flow*.{yml,yaml}",
+                            ["https://spec.openapis.org/oas/3.2/schema/2025-09-17"] = {
+                                "openapi.yaml",
+                                "**/openapi/*.yaml",
+                                "**/*openapi*.yml",
+                            },
                         },
                     }
                 }
