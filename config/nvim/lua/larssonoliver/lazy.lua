@@ -168,10 +168,30 @@ return require("lazy").setup({
         },
 
         -- LSP
-        { 'neovim/nvim-lspconfig' },
         {
-            'williamboman/mason.nvim',
-            dependencies = { 'williamboman/mason-lspconfig.nvim' }
+            "mason-org/mason-lspconfig.nvim",
+            opts = {
+                ensure_installed = {
+                    "lua_ls",
+                    "denols",
+                    "bashls",
+                    "cmake",
+                    "cssls",
+                    "emmet_language_server",
+                    "eslint",
+                    "gopls",
+                    "ltex",
+                    "marksman",
+                    "vtsls",
+                    "vue_ls",
+                    "yamlls",
+                },
+                automatic_enable = true,
+            },
+            dependencies = {
+                { "mason-org/mason.nvim", opts = {} },
+                "neovim/nvim-lspconfig",
+            },
         },
 
         -- Autocompletion
