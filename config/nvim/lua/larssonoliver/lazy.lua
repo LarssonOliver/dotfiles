@@ -72,15 +72,6 @@ return require("lazy").setup({
             end
         },
 
-        -- Git conflicts
-        {
-            "akinsho/git-conflict.nvim",
-            version = "*",
-            config = function()
-                require("git-conflict").setup()
-            end
-        },
-
         -- Telescope
         {
             "nvim-telescope/telescope.nvim",
