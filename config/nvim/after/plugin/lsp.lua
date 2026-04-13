@@ -59,13 +59,18 @@ vim.lsp.config("vtsls", {
     },
 })
 
+
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/denols.lua
+vim.g.markdown_fenced_languages = {
+    "ts=typescript"
+}
 vim.lsp.config("denols", {
-    init_options = {
-        lint = true,
-        unstable = true,
-    },
-    root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
-    single_file_support = false,
+    -- init_options = {
+    --     lint = true,
+    --     unstable = true,
+    -- },
+    -- root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc"),
+    -- single_file_support = false,
 })
 
 vim.lsp.config("yamlls", {
