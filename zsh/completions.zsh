@@ -6,3 +6,7 @@ fi
 if command -v talhelper &> /dev/null; then
     eval "$(talhelper completion zsh)"
 fi
+
+if command -v sops &> /dev/null; then
+    eval "$(sops completion zsh)"
+fi
