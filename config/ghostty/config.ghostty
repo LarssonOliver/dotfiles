@@ -1,2 +1,3 @@
 theme = Nord
-font-family = "Regular"
+font-family = "SauceCodePro Nerd Font Mono"
+cursor-style = block
