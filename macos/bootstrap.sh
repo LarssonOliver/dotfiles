@@ -37,14 +37,6 @@ brew analytics off
 brew bundle check || brew bundle
 
 ###############################################################################
-# Yabai
-###############################################################################
-
-if command -v yabai &> /dev/null; then
-    echo "$(whoami) ALL=(root) NOPASSWD: $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
-fi
-
-###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
@@ -92,6 +84,12 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Use keyboard navigation to move focus between controls (tab navigation)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Use F1, F2, etc. keys as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+# Set the "globe" key to show the emoji window
+defaults write com.apple.HIToolbox AppleFnUsageType -int 2
 
 ###############################################################################
 # Screen                                                                      #
@@ -264,4 +262,32 @@ defaults write com.apple.spotlight orderedItems -array \
   '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
   '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
   '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
+###############################################################################
+# Keyboard Shortcuts                                                         #
+###############################################################################
+
+# Turn Dock Hiding On/Off: disable the shortcut (keeps default Cmd+Option+D binding)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 52 \
+  '<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>100</integer><integer>2</integer><integer>1572864</integer></array><key>type</key><string>standard</string></dict></dict>'
+
+# Select the previous input source: rebind from Ctrl+Space to Option+Space
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 \
+  '<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>524288</integer></array><key>type</key><string>standard</string></dict></dict>'
+
+# Show Spotlight search: rebind from Cmd+Space to Option+D
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 \
+  '<dict><key>enabled</key><true/><key>value</key><dict><key>parameters</key><array><integer>100</integer><integer>2</integer><integer>524288</integer></array><key>type</key><string>standard</string></dict></dict>'
+
+# Move left a space: disable the Mission Control shortcut
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 \
+  '<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>123</integer><integer>8650752</integer></array><key>type</key><string>standard</string></dict></dict>'
+
+# Move right a space: disable the Mission Control shortcut
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 \
+  '<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>124</integer><integer>8650752</integer></array><key>type</key><string>standard</string></dict></dict>'
+
+# Switch to Desktop 1: disable the shortcut
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 118 \
+  '<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>65535</integer><integer>18</integer><integer>262144</integer></array><key>type</key><string>standard</string></dict></dict>'
 
