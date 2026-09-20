@@ -150,7 +150,6 @@ return require("lazy").setup({
                     "lua_ls",
                     "denols",
                     "bashls",
-                    "cmake",
                     "cssls",
                     "emmet_language_server",
                     "eslint",
