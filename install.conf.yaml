@@ -30,6 +30,7 @@
     ~/.config/zathura: config/zathura
     ~/.config/fontconfig: config/fontconfig
     ~/.config/k9s: config/k9s
+    ~/.config/sofka: config/sofka
     ~/.config/ghostty: config/ghostty
     ~/.config/aerospace: 
       path: config/aerospace

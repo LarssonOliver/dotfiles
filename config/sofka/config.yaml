@@ -1,0 +1,24 @@
+readonly: true
+
+mouse: true
+skin:
+  name: nord
+
+thresholds:
+  utilization:
+    warn: 70
+    critical: 90
+
+logs: 
+  tail: 100
+  buffer: 5000
+
+debug:
+  image: "busybox:1.35.0"
+  node_namespace: "default"
+
+guardrails: 
+  - contexts: ["*prod*"]
+    confirmation: "type-resource-name"
+    reason: "Prod - type the resource name to confirm."
+
