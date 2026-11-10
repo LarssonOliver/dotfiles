@@ -8,6 +8,7 @@ font-thicken = true
 
 cursor-style = block
 cursor-style-blink = false
+shell-integration-features = no-cursor
 
 keybind = ctrl+shift+enter=new_window
 keybind = ctrl+slash=text:\x1f
