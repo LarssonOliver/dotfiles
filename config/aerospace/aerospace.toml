@@ -16,6 +16,23 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Pin workspaces to monitors (1 = laptop, 2 = first external, 3 = second
+# external, left to right) to mimic i3's per-output workspace behavior.
+# When an external monitor isn't connected, its assigned workspaces just
+# behave as unpinned and fall back to whatever monitor is active, so
+# disconnecting both externals leaves everything on the laptop screen.
+[workspace-to-monitor-force-assignment]
+    1 = 3
+    2 = 1
+    3 = 1
+    4 = 1
+    5 = 2
+    6 = 2
+    7 = 3
+    8 = 3
+    9 = 3
+    10 = 3
+
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
     # `open -na` spawns a whole new Ghostty process instead of a new window
