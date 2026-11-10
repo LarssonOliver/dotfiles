@@ -4,10 +4,12 @@
 path_prepend "$HOME/.local/bin"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-   eval "$(/opt/homebrew/bin/brew shellenv)" 
+   eval "$(/opt/homebrew/bin/brew shellenv)"
 
    # For zathura.
    export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
+elif [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # Check if neovim is installed, otherwise default to vim.

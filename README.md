@@ -23,6 +23,15 @@ After that, I simply install files using:
 This repository utilizes [dotbot](https://github.com/anishathalye/dotbot) 🤖
 for dotfile management.
 
+### Headless environments
+
+On Linux, if no display server is detected (`$DISPLAY`/`$WAYLAND_DISPLAY` are
+unset), the install is treated as headless: GUI app configs (i3, picom,
+dunst, GTK, zathura, ghostty, alacritty, fontconfig, wallpaper, etc.) are
+skipped, and `headless/bootstrap.sh` installs Homebrew plus a CLI-only
+toolset (`headless/Brewfile`) instead of relying on a desktop package
+manager. This is intended for cloud dev VMs and similar environments.
+
 ## Repository Layout
 
 The layout of this directory roughly maps to that of `$HOME`. Files in the root

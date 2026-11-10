@@ -6,6 +6,11 @@ if [[ $(uname -s) == "Darwin" ]]; then
         cd macos || exit
         sh bootstrap.sh
     )
+elif ./is-headless.sh; then
+    (
+        cd headless || exit
+        sh bootstrap.sh
+    )
 fi
 
 # Check if oh-my-zsh is installed

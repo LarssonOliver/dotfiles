@@ -18,21 +18,41 @@
     ~/dev:
 
 - link:
-    ~/.config/gtk-3.0: config/gtk-3.0
-    ~/.config/gtk-4.0: config/gtk-3.0
-    ~/.gtkrc-2.0: gtkrc-2.0
-    ~/.config/i3: config/i3
-    ~/.config/i3blocks: config/i3blocks
-    ~/.config/picom.conf: config/picom.conf
-    ~/.config/starship.toml: config/starship.toml 
-    ~/.config/dunst: config/dunst
+    ~/.config/gtk-3.0:
+      path: config/gtk-3.0
+      if: '! ./is-headless.sh'
+    ~/.config/gtk-4.0:
+      path: config/gtk-3.0
+      if: '! ./is-headless.sh'
+    ~/.gtkrc-2.0:
+      path: gtkrc-2.0
+      if: '! ./is-headless.sh'
+    ~/.config/i3:
+      path: config/i3
+      if: '! ./is-headless.sh'
+    ~/.config/i3blocks:
+      path: config/i3blocks
+      if: '! ./is-headless.sh'
+    ~/.config/picom.conf:
+      path: config/picom.conf
+      if: '! ./is-headless.sh'
+    ~/.config/starship.toml: config/starship.toml
+    ~/.config/dunst:
+      path: config/dunst
+      if: '! ./is-headless.sh'
     ~/.config/nvim: config/nvim
-    ~/.config/zathura: config/zathura
-    ~/.config/fontconfig: config/fontconfig
+    ~/.config/zathura:
+      path: config/zathura
+      if: '! ./is-headless.sh'
+    ~/.config/fontconfig:
+      path: config/fontconfig
+      if: '! ./is-headless.sh'
     ~/.config/k9s: config/k9s
     ~/.config/sofka: config/sofka
-    ~/.config/ghostty: config/ghostty
-    ~/.config/aerospace: 
+    ~/.config/ghostty:
+      path: config/ghostty
+      if: '! ./is-headless.sh'
+    ~/.config/aerospace:
       path: config/aerospace
       if: '[ `uname` = Darwin ]'
 
@@ -45,21 +65,25 @@
     ~/.tmux: tmux
     ~/.config/tmux/tmux.conf: config/tmux/tmux.conf
 
-    ~/.config/alacritty/: 
+    ~/.config/alacritty/:
       glob: true
       path: config/alacritty/*
       exclude:
         - config/alacritty/darwin.toml
+      if: '! ./is-headless.sh'
 
-    ~/.config/alacritty/darwin.toml: 
+    ~/.config/alacritty/darwin.toml:
       path: config/alacritty/darwin.toml
       if: '[ `uname` = Darwin ]'
 
-    ~/.local/share/wallpaper/: 
+    ~/.local/share/wallpaper/:
       path: local/share/wallpaper/*
       glob: true
+      if: '! ./is-headless.sh'
 
-    ~/.local/share/icons/dotfiles.png: local/share/icons/dotfiles.png
+    ~/.local/share/icons/dotfiles.png:
+      path: local/share/icons/dotfiles.png
+      if: '! ./is-headless.sh'
     ~/.local/bin/:
       path: local/bin/*
       glob: true
