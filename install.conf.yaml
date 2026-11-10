@@ -89,6 +89,8 @@
       exclude:
         - zsh/plugins
 
+    ~/.claude/CLAUDE.md: claude/CLAUDE.md
+
 - shell:
   - command: sh post-install.sh
     description: Running post installation script]
