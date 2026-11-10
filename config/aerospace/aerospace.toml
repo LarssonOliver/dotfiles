@@ -18,7 +18,14 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
     # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
-    alt-enter = 'exec-and-forget open -na /Applications/Ghostty.app'
+    # `open -na` spawns a whole new Ghostty process instead of a new window
+    # in the running instance, and since Ghostty doesn't quit when its last
+    # window closes, those processes (and their dock icons) pile up forever.
+    alt-enter = '''exec-and-forget osascript -e '
+tell application "Ghostty"
+    new window
+end tell'
+'''
 
     # i3 wraps focus by default
     alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
