@@ -1,2 +1,13 @@
 theme = Nord
-font-family = "SauceCodePro NF"
+palette = 8=#4C566A
+cursor-text = #2E3440
+
+font-family = "SauceCodePro NFM"
+font-size = 12
+font-thicken = true
+
+cursor-style = block
+cursor-style-blink = false
+
+keybind = ctrl+shift+enter=new_window
+keybind = ctrl+slash=text:\x1f
