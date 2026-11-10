@@ -12,6 +12,11 @@ elif [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# Same condition as is-headless.sh, which isn't reachable from ~/.shell.
+if [[ "$(uname -s)" == "Linux" && -z "${DISPLAY:-}" && -z "${WAYLAND_DISPLAY:-}" ]]; then
+    export TERM=xterm-256color
+fi
+
 # Check if neovim is installed, otherwise default to vim.
 if ! command -v nvim > /dev/null; then
     export EDITOR=vim
