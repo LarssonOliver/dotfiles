@@ -211,30 +211,6 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock show-recents -bool false
 
 ###############################################################################
-# Mail                                                                        #
-###############################################################################
-
-# Copy addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>`
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-# Disable send and reply animations in Mail.app
-defaults write com.apple.mail DisableReplyAnimations -bool true
-defaults write com.apple.mail DisableSendAnimations -bool true
-
-# Most recent first
-defaults write com.apple.mail ConversationViewSortDescending -bool true
-
-# Disable inline attachments (just show the icons)
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool false
-
-# Compose mail in plain-text
-defaults write com.apple.mail SendFormat Plain
-
-# Disable remote content
-defaults write com.apple.mail DisableURLLoading -bool true
-
-
-###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
 
