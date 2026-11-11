@@ -1,6 +1,13 @@
 readonly: true
 
 mouse: true
+
+keys:
+  navigation:
+    half_page_up: ctrl-u
+    half_page_down: ctrl-d
+  table:
+    delete: ctrl-x
 skin:
   name: nord
 
