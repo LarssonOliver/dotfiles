@@ -11,6 +11,7 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 
 macos-option-as-alt = true
+gtk-titlebar = false
 
 bell-features = no-system,no-audio,no-attention,no-title,no-border
 
