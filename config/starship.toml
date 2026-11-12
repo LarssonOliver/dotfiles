@@ -3,8 +3,6 @@
 
 format = """
 $all\
-$fill\
-$time\
 $line_break\
 $jobs\
 $battery\
@@ -17,12 +15,15 @@ $character"""
 # Newline between prompts
 add_newline = false
 
-[fill]
-symbol = " "
+right_format = "$time"
 
 # Enable kubernetes module
 [kubernetes]
 disabled = false
+symbol = "󱃾 "
+
+[gcloud]
+symbol = "󱇶 "
 
 [aws]
 disabled = true
