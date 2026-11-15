@@ -1,7 +1,5 @@
 cask_args appdir: "/Applications", require_sha: true
 
-tap "koekeishiya/formulae"
-
 brew "ffmpeg"
 brew "git"
 brew "gnupg"
@@ -16,7 +14,6 @@ brew "node"
 brew "openssh"
 brew "python"
 brew "starship"
-brew "opentofu"
 brew "typescript"
 brew "zsh"
 brew "zsh-completions"
@@ -33,12 +30,7 @@ brew "wget"
 brew "fd"
 brew "luarocks"
 
-cask "bitwarden"
-cask "docker-desktop"
 cask "firefox"
 cask "ghostty"
-cask "visual-studio-code"
-cask "zotero" # no arm64_big_sur yet
 cask "font-sauce-code-pro-nerd-font"
 cask "nikitabobko/tap/aerospace"
-cask "bitwarden"
