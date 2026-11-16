@@ -32,5 +32,6 @@ brew "luarocks"
 
 cask "firefox"
 cask "ghostty"
+cask "linearmouse"
 cask "font-sauce-code-pro-nerd-font"
 cask "nikitabobko/tap/aerospace"
