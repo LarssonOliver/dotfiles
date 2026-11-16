@@ -115,10 +115,25 @@ vim.lsp.config("yamlls", {
     }
 })
 
+vim.lsp.config("basedpyright", {
+    settings = {
+        basedpyright = {
+            -- Import sorting is handled by ruff.
+            disableOrganizeImports = true,
+        },
+    },
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
         local opts = { buffer = event.buf }
+
+        -- basedpyright provides hover; avoid ruff's duplicate.
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client.name == "ruff" then
+            client.server_capabilities.hoverProvider = false
+        end
 
         vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)

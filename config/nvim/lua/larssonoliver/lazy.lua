@@ -148,6 +148,8 @@ return require("lazy").setup({
             opts = {
                 ensure_installed = {
                     "lua_ls",
+                    "basedpyright",
+                    "ruff",
                     "denols",
                     "bashls",
                     "cssls",
