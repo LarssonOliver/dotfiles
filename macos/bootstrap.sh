@@ -210,6 +210,9 @@ defaults write com.apple.dock showhidden -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
+# Don't hide all windows when clicking the wallpaper
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
 ###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
