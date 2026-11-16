@@ -13,6 +13,20 @@
     edit-unmerged = "!eu() { git ls-files --unmerged | cut -f2 | sort -u ; }; nvim $(eu)"
     add-unmerged = "!eu() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add $(eu)"
 
+[core]
+	fsmonitor = true
+	untrackedCache = true
+
+[feature]
+	manyFiles = true
+
+[fetch]
+	writeCommitGraph = true
+	parallel = 0
+
+[maintenance]
+	strategy = incremental
+
 [pull]
 	rebase = merges
 
