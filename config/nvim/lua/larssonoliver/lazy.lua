@@ -201,21 +201,52 @@ return require("lazy").setup({
         -- Detects the helm filetype that helm_ls attaches to.
         { "towolf/vim-helm" },
 
-        -- Autocompletion
+        -- Autocompletion. Snippets come from friendly-snippets and ./snippets.
         {
-            'hrsh7th/nvim-cmp',
+            "saghen/blink.cmp",
+            version = "1.*",
             dependencies = {
-                'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-path',
-                'saadparwaiz1/cmp_luasnip',
-                'hrsh7th/cmp-nvim-lsp',
-            }
+                "rafamadriz/friendly-snippets",
+                "fang2hou/blink-copilot",
+            },
+            opts = {
+                keymap = {
+                    preset = "default",
+                    ["<C-u>"] = { "scroll_documentation_up", "fallback" },
+                    ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+                    -- Left to the LSP signature help mapping in after/plugin/lsp.lua.
+                    ["<C-k>"] = false,
+                },
+                completion = {
+                    list = { selection = { auto_insert = false } },
+                    documentation = {
+                        auto_show = true,
+                        window = { border = "rounded" },
+                    },
+                    menu = {
+                        draw = {
+                            columns = {
+                                { "label",     "label_description", gap = 1 },
+                                { "kind_icon", "kind" },
+                                { "source_name" },
+                            },
+                        },
+                    },
+                },
+                sources = {
+                    default = { "copilot", "lsp", "path", "snippets", "buffer" },
+                    providers = {
+                        copilot = {
+                            name = "copilot",
+                            module = "blink-copilot",
+                            async = true,
+                        },
+                        buffer = { min_keyword_length = 3 },
+                        snippets = { min_keyword_length = 2 },
+                    },
+                },
+            },
         },
-
-        -- Snippets
-        { 'L3MON4D3/LuaSnip' },
-        -- Snippet Collection (Optional)
-        { 'rafamadriz/friendly-snippets' },
 
         -- Copilot, lazy loaded, initiate with ":Copilot auth"
         {
@@ -235,14 +266,6 @@ return require("lazy").setup({
                     },
                 })
             end,
-        },
-
-        {
-            "zbirenbaum/copilot-cmp",
-            dependencies = { "zbirenbaum/copilot.lua" },
-            config = function()
-                require("copilot_cmp").setup()
-            end
         },
 
         { 'AndreM222/copilot-lualine' },
