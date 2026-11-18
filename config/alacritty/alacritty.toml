@@ -67,6 +67,3 @@ y = 2
 [scrolling]
 history = 10000
 multiplier = 3
-
-[env]
-TERM = "xterm-256color"
