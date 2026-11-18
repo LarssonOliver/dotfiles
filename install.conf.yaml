@@ -87,6 +87,9 @@
 
     ~/.ssh/config: ssh/config
     ~/.gitconfig: gitconfig
+    ~/.gitconfig_darwin:
+      path: gitconfig-darwin
+      if: '[ `uname` = Darwin ]'
 
     ~/.shell: shell
 

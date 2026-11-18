@@ -14,7 +14,6 @@
     add-unmerged = "!eu() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add $(eu)"
 
 [core]
-	fsmonitor = true
 	untrackedCache = true
 
 [feature]
@@ -52,8 +51,9 @@
 [url "git@git.larssonoliver.com:"]
     pushInsteadOf = https://git.larssonoliver.com/
 
-# Local customization file
+# Platform and local customization files (missing files are ignored)
 [include]
+	path = ~/.gitconfig_darwin
 	path = ~/.gitconfig_local
 
 [filter "lfs"]

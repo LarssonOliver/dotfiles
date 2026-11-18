@@ -1,0 +1,5 @@
+# vi: filetype=gitconfig
+
+# The builtin fsmonitor daemon only exists on macOS and Windows.
+[core]
+	fsmonitor = true

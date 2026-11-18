@@ -4,9 +4,9 @@
 # https://github.com/mathiasbynens/dotfiles
 # https://github.com/br3ndonland/dotfiles
 
-# Close any open System Preferences panes, to prevent them from overriding
+# Close any open System Settings panes, to prevent them from overriding
 # settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'tell application "System Settings" to quit'
 
 echo "Administrator password required to install Homebrew and packages."
 
@@ -59,7 +59,7 @@ defaults write com.apple.menuextra.clock IsAnalog -bool false
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d hh:mm"
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram StartupMute=%01
 
 ###############################################################################
 # Peripherals                                                                 #
@@ -155,10 +155,10 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 chflags nohidden ~/Library
 
 ###############################################################################
-# Menu bar, Dock, Dashboard, and hot corners                                  #
+# Menu bar, Dock, and hot corners                                             #
 ###############################################################################
 
-# Auto-hide menu bar
+# Don't auto-hide the menu bar
 defaults write NSGlobalDomain _HIHideMenuBar -bool false
 
 # Change minimize/maximize window effect
@@ -185,12 +185,6 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Group windows by application in Mission Control
 defaults write com.apple.dock expose-group-by-app -bool true
-
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
-
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
