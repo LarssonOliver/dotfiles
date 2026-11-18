@@ -5,7 +5,6 @@ plugins=(
 	dotenv
 	ssh-agent
     tmux
-	zsh-completions
 
     zsh-history-substring-search
     zsh-autosuggestions
@@ -15,6 +14,10 @@ plugins=(
 )
 
 zstyle ':omz:update' mode reminder
+
+# zsh-completions only adds completion functions; loading it as a plugin
+# makes oh-my-zsh rebuild .zcompdump. See its README.
+fpath+=(${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-completions/src)
 
 source $ZSH/oh-my-zsh.sh
 
