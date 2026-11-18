@@ -21,7 +21,7 @@ logs:
   buffer: 5000
 
 debug:
-  image: "busybox:1.35.0"
+  image: "busybox:1.38.0"
   node_namespace: "default"
 
 guardrails: 

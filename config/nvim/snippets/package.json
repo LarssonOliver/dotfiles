@@ -1,7 +1,7 @@
 {
   "name": "larssonoliver-snippets",
   "displayName": "Oliver Larsson's Snippets",
-  "discription": "A collection of snippets for various languages",
+  "description": "A collection of snippets for various languages",
   "engines": {
     "vscode": "^1.0.0"
   },
