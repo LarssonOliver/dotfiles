@@ -115,6 +115,9 @@
 
     ~/.claude/CLAUDE.md: claude/CLAUDE.md
     ~/.claude/settings.json: claude/settings.json
+    ~/.claude/hooks/: 
+      glob: true
+      path: claude/hooks/*
 
 - shell:
   - command: sh post-install.sh
