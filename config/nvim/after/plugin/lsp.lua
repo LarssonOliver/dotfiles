@@ -73,25 +73,38 @@ vim.lsp.config("denols", {
     -- single_file_support = false,
 })
 
-local yaml_schemas = require("schemastore").yaml.schemas()
--- Kubernetes version follows yaml-language-server's default; CRDs come from its datree catalog.
--- Scoped to typical manifest directories: a plain "*.yaml" would override SchemaStore
--- (e.g. GitHub workflows) and yaml-language-server has no exclusion globs.
-yaml_schemas.kubernetes = {
-    "**/k8s/**/*.yaml",
-    "**/manifests/**/*.yaml",
-    "**/deploy/**/*.yaml",
-    "**/clusters/**/*.yaml",
-    "**/apps/**/*.yaml",
-    "**/infrastructure/**/*.yaml",
-    "**/base/**/*.yaml",
-    "**/overlays/**/*.yaml",
-}
+local yaml_schemas = require("schemastore").yaml.schemas({
+    -- Match any YAML under policies/ and def/, which clashes with e.g. Kyverno policies.
+    ignore = { "Aerleon Policy", "Aerleon Network & Service Definitions" },
+})
 yaml_schemas["https://spec.openapis.org/oas/3.1/schema/2025-09-15"] = {
     "openapi.yaml",
     "**/openapi/*.yaml",
     "**/*openapi*.yml",
 }
+
+-- Kubernetes version follows yaml-language-server's default; CRDs come from its datree catalog.
+-- The Kubernetes schema takes priority over any other match, so files with a more specific
+-- schema are excluded. Directory-wide patterns (e.g. "**/policies/**/*.yaml") are not
+-- excluded as they would also catch real manifests; CI workflow directories are listed instead.
+local kubernetes_files = {
+    "*.yaml",
+    "!**/.github/**",
+    "!**/.gitea/**",
+    "!**/.forgejo/**",
+    "!**/.gitlab/**",
+    -- Helm values files, which SchemaStore has no pattern for.
+    "!**/values*.yaml",
+}
+for _, patterns in pairs(yaml_schemas) do
+    for _, pattern in ipairs(type(patterns) == "table" and patterns or { patterns }) do
+        local basename = pattern:match("[^/]*$")
+        if basename:match("%.yaml$") and not basename:match("^%*+%.yaml$") then
+            table.insert(kubernetes_files, "!" .. pattern)
+        end
+    end
+end
+yaml_schemas.kubernetes = kubernetes_files
 
 vim.lsp.config("yamlls", {
     settings = {
