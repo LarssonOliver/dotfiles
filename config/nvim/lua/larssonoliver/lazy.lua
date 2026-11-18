@@ -132,8 +132,11 @@ return require("lazy").setup({
                     "emmet_language_server",
                     "eslint",
                     "gopls",
+                    "helm_ls",
                     "ltex_plus",
                     "marksman",
+                    "terraformls",
+                    "tflint",
                     "vtsls",
                     "vue_ls",
                     "yamlls",
@@ -145,6 +148,9 @@ return require("lazy").setup({
                 "neovim/nvim-lspconfig",
             },
         },
+        { "b0o/SchemaStore.nvim", lazy = true },
+        -- Detects the helm filetype that helm_ls attaches to.
+        { "towolf/vim-helm" },
 
         -- Autocompletion
         {

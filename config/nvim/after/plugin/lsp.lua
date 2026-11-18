@@ -73,6 +73,26 @@ vim.lsp.config("denols", {
     -- single_file_support = false,
 })
 
+local yaml_schemas = require("schemastore").yaml.schemas()
+-- Kubernetes version follows yaml-language-server's default; CRDs come from its datree catalog.
+-- Scoped to typical manifest directories: a plain "*.yaml" would override SchemaStore
+-- (e.g. GitHub workflows) and yaml-language-server has no exclusion globs.
+yaml_schemas.kubernetes = {
+    "**/k8s/**/*.yaml",
+    "**/manifests/**/*.yaml",
+    "**/deploy/**/*.yaml",
+    "**/clusters/**/*.yaml",
+    "**/apps/**/*.yaml",
+    "**/infrastructure/**/*.yaml",
+    "**/base/**/*.yaml",
+    "**/overlays/**/*.yaml",
+}
+yaml_schemas["https://spec.openapis.org/oas/3.1/schema/2025-09-15"] = {
+    "openapi.yaml",
+    "**/openapi/*.yaml",
+    "**/*openapi*.yml",
+}
+
 vim.lsp.config("yamlls", {
     settings = {
         redhat = {
@@ -84,33 +104,12 @@ vim.lsp.config("yamlls", {
             -- Disable alphabetic ordering of keys warning.
             keyOrdering = false,
 
-            -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw
-            schemas = {
-                kubernetes = "*.yaml",
-                ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-                ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-                ["https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json"] =
-                "azure-pipelines.yml",
-                ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-                ["http://json.schemastore.org/prettierrc"] = ".prettierrc.{yml,yaml}",
-                ["http://json.schemastore.org/kustomization"] = "kustomization.{yml,yaml}",
-                ["http://json.schemastore.org/ansible-playbook"] = "*play*.{yml,yaml}",
-                ["http://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
-                ["https://json.schemastore.org/dependabot-v2"] = ".github/dependabot.{yml,yaml}",
-                ["https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json"] =
-                "*gitlab-ci*.{yml,yaml}",
-                ["https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"] =
-                "*api*.{yml,yaml}",
-                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] =
-                "*docker-compose*.{yml,yaml}",
-                ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] =
-                "*flow*.{yml,yaml}",
-                ["https://spec.openapis.org/oas/3.1/schema/2025-09-15"] = {
-                    "openapi.yaml",
-                    "**/openapi/*.yaml",
-                    "**/*openapi*.yml",
-                },
+            -- SchemaStore.nvim provides the catalog instead.
+            schemaStore = {
+                enable = false,
+                url = "",
             },
+            schemas = yaml_schemas,
         }
     }
 })
