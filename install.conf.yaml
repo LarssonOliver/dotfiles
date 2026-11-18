@@ -22,7 +22,7 @@
       path: config/gtk-3.0
       if: '! ./is-headless.sh'
     ~/.config/gtk-4.0:
-      path: config/gtk-3.0
+      path: config/gtk-4.0
       if: '! ./is-headless.sh'
     ~/.gtkrc-2.0:
       path: gtkrc-2.0
