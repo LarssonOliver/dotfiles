@@ -17,4 +17,4 @@ vim.keymap.set("n", "<leader>ps", require("telescope.builtin").live_grep, {})
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- clangd
-vim.keymap.set("n", "<leader>gh", ":ClangdSwitchSourceHeader<CR>", {})
+vim.keymap.set("n", "<leader>gh", ":LspClangdSwitchSourceHeader<CR>", {})

@@ -136,6 +136,15 @@ vim.lsp.config("basedpyright", {
     },
 })
 
+-- Show the diagnostic in a float after jumping with the built-in ]d/[d/]D/[D.
+vim.diagnostic.config({
+    jump = {
+        on_jump = function(_, bufnr)
+            vim.diagnostic.open_float({ bufnr = bufnr, scope = "cursor", focus = false })
+        end,
+    },
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -146,9 +155,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
         if client and client.name == "ruff" then
             client.server_capabilities.hoverProvider = false
         end
-
-        vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
-        vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)

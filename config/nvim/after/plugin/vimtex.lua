@@ -7,7 +7,6 @@ elseif vim.fn.has("unix") == 1 then
 end
 
 vim.g.vimtex_compiler_latexmk = {
-    build_dir = "",
     callback = true,
     continuous = true,
     executable = "latexmk",
