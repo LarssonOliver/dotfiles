@@ -127,7 +127,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/kube-context-guard.sh"
+            "command": "~/.claude/hooks/kube-context-guard.sh",
+            "onFailure": "block"
           }
         ]
       }
