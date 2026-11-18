@@ -81,9 +81,6 @@
       glob: true
       if: '! ./is-headless.sh'
 
-    ~/.local/share/icons/dotfiles.png:
-      path: local/share/icons/dotfiles.png
-      if: '! ./is-headless.sh'
     ~/.local/bin/:
       path: local/bin/*
       glob: true
