@@ -6,6 +6,8 @@ brew "gnupg"
 brew "gnu-sed"
 brew "gnu-tar"
 brew "grep"
+brew "kubectl"
+brew "krew"
 brew "helm"
 brew "jq"
 brew "macos-trash" if OS.mac?
