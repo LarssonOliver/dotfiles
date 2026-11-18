@@ -33,6 +33,9 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+-- Open files unfolded.
+vim.opt.foldlevelstart = 99
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 

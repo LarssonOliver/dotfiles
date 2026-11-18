@@ -48,6 +48,54 @@ return require("lazy").setup({
             end
         },
 
+        -- Treesitter
+        {
+            "nvim-treesitter/nvim-treesitter",
+            lazy = false,
+            build = ":TSUpdate",
+            config = function()
+                -- c, lua, markdown, query, vim and vimdoc ship with Neovim.
+                -- LaTeX is left out on purpose: vimtex provides its own syntax.
+                require("nvim-treesitter").install({
+                    "bash",
+                    "cpp",
+                    "css",
+                    "diff",
+                    "dockerfile",
+                    "git_config",
+                    "gitcommit",
+                    "go",
+                    "gomod",
+                    "hcl",
+                    "helm",
+                    "html",
+                    "javascript",
+                    "json",
+                    "make",
+                    "python",
+                    "regex",
+                    "sql",
+                    "terraform",
+                    "toml",
+                    "tsx",
+                    "typescript",
+                    "vue",
+                    "yaml",
+                    "zig",
+                })
+
+                vim.api.nvim_create_autocmd("FileType", {
+                    callback = function(event)
+                        if not pcall(vim.treesitter.start, event.buf) then
+                            return
+                        end
+                        vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                        vim.wo[0][0].foldmethod = "expr"
+                    end,
+                })
+            end,
+        },
+
         -- Telescope
         {
             "nvim-telescope/telescope.nvim",
