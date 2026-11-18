@@ -8,11 +8,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true })
 
-vim.keymap.set("n", "<C-H>", "<cmd> TmuxNavigateLeft<CR>")
-vim.keymap.set("n", "<C-J>", "<cmd> TmuxNavigateDown<CR>")
-vim.keymap.set("n", "<C-K>", "<cmd> TmuxNavigateUp<CR>")
-vim.keymap.set("n", "<C-L>", "<cmd> TmuxNavigateRight<CR>")
-
 -- Telescope
 vim.keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {})
 vim.keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {})

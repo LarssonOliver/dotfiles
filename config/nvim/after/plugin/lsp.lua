@@ -137,7 +137,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
 
-        vim.keymap.set("n", "K", vim.lsp.buf.signature_help, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)
 
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
