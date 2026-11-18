@@ -33,7 +33,7 @@ vim.lsp.config('lua_ls', {
 })
 
 local vue_typescript_plugin_path = vim.fn.expand("$MASON")
-    .. "/packages/vue-language-server"
+    .. "/packages/vue-language-server/node_modules/@vue/language-server"
 
 vim.lsp.config("vtsls", {
     settings = {

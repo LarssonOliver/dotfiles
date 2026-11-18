@@ -33,7 +33,7 @@ set nobackup
 set undofile
 
 set scrolloff=8
-set signcolumn="yes"
+set signcolumn=yes
 
 set cmdheight=1
 
@@ -41,7 +41,7 @@ set updatetime=50
 
 set colorcolumn=80
 
-set completeopt="menu,menuone,noselect"
+set completeopt=menu,menuone,noselect
 
 let mapleader=" "
 
