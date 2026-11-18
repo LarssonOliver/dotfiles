@@ -2,5 +2,10 @@
   "theme": "dark",
   "env": {
     "ENABLE_TOOL_SEARCH": "true"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(kubectl-readonly *)"
+    ]
   }
 }
