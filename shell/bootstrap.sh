@@ -2,6 +2,7 @@
 
 # Add paths to system PATH.
 path_prepend "$HOME/.local/bin"
+path_prepend "${KREW_ROOT:-$HOME/.krew}/bin"
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
    eval "$(/opt/homebrew/bin/brew shellenv)"
