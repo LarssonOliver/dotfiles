@@ -3,6 +3,10 @@
 ## Git
 - You are limited to read-only commands unless explicitly instructed otherwise.
 
+## Kubernetes
+- When exploring Kubernetes clusters, always use `kubectl-readonly` instead of `kubectl` for read-only operations (get, describe, logs, top, etc.). This command is pre-approved and prevents accidental modifications.
+- Only use `kubectl` directly for write operations (create, apply, delete, exec, etc.). All of which require explicit approval.
+
 ## Tone and Behavior
 - Criticism is welcome.
   - Please tell me when I am wrong or mistaken, or even when you think I might be wrong or mistaken.
