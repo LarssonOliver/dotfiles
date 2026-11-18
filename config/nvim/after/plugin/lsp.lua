@@ -2,7 +2,7 @@ vim.lsp.config('lua_ls', {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
-            if vim.loop.fs_stat(path .. "/.luarc.json") or vim.loop.fs_stat(path .. "/.luarc.jsonc") then
+            if vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc") then
                 return
             end
         end
@@ -144,7 +144,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        -- nowait: don't wait for Neovim's built-in grn/gra/grr/gri/grt.
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = event.buf, nowait = true })
         vim.keymap.set("n", "go", vim.lsp.buf.type_definition, opts)
         vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, opts)
 
@@ -203,7 +204,7 @@ cmp.setup({
 
     }),
     formatting = {
-        fileds = details
+        fields = details
             and { 'abbr', 'kind', 'menu' }
             or { 'abbr', 'menu', 'kind' },
         format = function(entry, item)

@@ -48,30 +48,6 @@ return require("lazy").setup({
             end
         },
 
-        -- Commenting
-        {
-            "terrortylor/nvim-comment",
-            dependencies = { { "JoosepAlviste/nvim-ts-context-commentstring" } },
-            config = function()
-                require("nvim_comment").setup({
-                    comment_empty = false,
-                    create_mappings = false,
-                    hook = function()
-                        local slash_comment_filetypes = { "cpp", "c", "zig", "openscad" }
-                        for _, v in pairs(slash_comment_filetypes) do
-                            if vim.api.nvim_buf_get_option(0, "filetype") == v then
-                                vim.api.nvim_buf_set_option(0, "commentstring", "// %s")
-                                break
-                            end
-                        end
-                        if vim.api.nvim_buf_get_option(0, "filetype") == "vue" then
-                            require("ts_context_commentstring.internal").update_commentstring()
-                        end
-                    end
-                })
-            end
-        },
-
         -- Telescope
         {
             "nvim-telescope/telescope.nvim",
@@ -156,7 +132,7 @@ return require("lazy").setup({
                     "emmet_language_server",
                     "eslint",
                     "gopls",
-                    "ltex",
+                    "ltex_plus",
                     "marksman",
                     "vtsls",
                     "vue_ls",
@@ -216,16 +192,5 @@ return require("lazy").setup({
         },
 
         { 'AndreM222/copilot-lualine' },
-
-        -- Debugging
-        {
-            "mfussenegger/nvim-dap",
-            dependencies = {
-                { "nvim-neotest/nvim-nio" },
-                { "rcarriga/nvim-dap-ui" },
-                { "theHamsta/nvim-dap-virtual-text" },
-                { "mxsdev/nvim-dap-vscode-js" }
-            }
-        },
     }
 })
