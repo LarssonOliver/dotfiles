@@ -8,19 +8,35 @@
 # settings we’re about to change
 osascript -e 'tell application "System Settings" to quit'
 
-echo "Administrator password required to install Homebrew and packages."
+# Without admin rights, skip everything that needs sudo.
+if id -Gn | tr ' ' '\n' | grep -qx admin; then
+    is_admin=true
+else
+    is_admin=false
+    echo "Not an administrator: skipping sudo steps (Homebrew install, nvram)."
+fi
 
-# Ask for the administrator password upfront
-sudo -v
+if $is_admin; then
+    echo "Administrator password required to install Homebrew and packages."
 
-# Keep-alive: update existing `sudo` time stamp until `bootstrap.sh` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+    # Ask for the administrator password upfront
+    sudo -v
+
+    # Keep-alive: update existing `sudo` time stamp until `bootstrap.sh` has finished
+    while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+fi
 
 ###############################################################################
 # Homebrew                                                                    #
 ###############################################################################
 
+if ! command -v brew &> /dev/null && [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 if ! command -v brew &> /dev/null; then
+    $is_admin || { echo "Homebrew is missing and installing it requires admin rights."; exit 1; }
+
     # Install Homebrew: https://docs.brew.sh/Installation
     script_url="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
     NONINTERACTIVE=1 /usr/bin/env bash -c "$(curl -fsSL $script_url)" 
@@ -59,7 +75,9 @@ defaults write com.apple.menuextra.clock IsAnalog -bool false
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d hh:mm"
 
 # Disable the sound effects on boot
-sudo nvram StartupMute=%01
+if $is_admin; then
+    sudo nvram StartupMute=%01
+fi
 
 ###############################################################################
 # Peripherals                                                                 #
