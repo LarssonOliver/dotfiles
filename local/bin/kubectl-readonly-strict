@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Krew installs the plugin with an underscore; this gives it the dashed name.
+exec kubectl-readonly_strict "$@"
