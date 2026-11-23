@@ -1,6 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "theme": "dark",
   "env": {
     "ENABLE_TOOL_SEARCH": "true"
   },
@@ -67,6 +66,24 @@
       "WebFetch(domain:docs.github.com)",
       "WebFetch(domain:raw.githubusercontent.com)"
     ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.azure/**)",
+      "Read(~/.config/gcloud/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.docker/config.json)",
+      "Read(~/.netrc)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(!.env.example)",
+      "Read(*.tfstate)",
+      "Read(*.tfstate.backup)",
+      "Read(*.pem)",
+      "Read(*.key)",
+      "Read(kubeconfig*)"
+    ],
     "ask": [
       "Bash(kubectl *)",
       "Bash(kubectl-readonly-strict *use-context*)",
@@ -102,24 +119,6 @@
       "Bash(git add --force*)",
       "Bash(gh pr merge *)",
       "Bash(docker push *)"
-    ],
-    "deny": [
-      "Read(~/.ssh/**)",
-      "Read(~/.gnupg/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.azure/**)",
-      "Read(~/.config/gcloud/**)",
-      "Read(~/.kube/**)",
-      "Read(~/.docker/config.json)",
-      "Read(~/.netrc)",
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(!.env.example)",
-      "Read(*.tfstate)",
-      "Read(*.tfstate.backup)",
-      "Read(*.pem)",
-      "Read(*.key)",
-      "Read(kubeconfig*)"
     ]
   },
   "hooks": {
@@ -135,5 +134,7 @@
         ]
       }
     ]
-  }
+  },
+  "theme": "dark",
+  "model": "opus"
 }
