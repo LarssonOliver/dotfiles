@@ -7,6 +7,7 @@
   "permissions": {
     "allow": [
       "Bash(kubectl-readonly-strict *)",
+      "Bash(kubectl-readonly_strict *)",
       "Bash(helm list *)",
       "Bash(helm status *)",
       "Bash(helm history *)",
@@ -69,6 +70,7 @@
     "ask": [
       "Bash(kubectl *)",
       "Bash(kubectl-readonly-strict *use-context*)",
+      "Bash(kubectl-readonly_strict *use-context*)",
       "Bash(kustomize build *--enable-*)",
       "Bash(helm install *)",
       "Bash(helm upgrade *)",
