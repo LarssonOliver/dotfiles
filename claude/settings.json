@@ -3,6 +3,59 @@
   "env": {
     "ENABLE_TOOL_SEARCH": "true"
   },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "~/.claude/hooks/tmux-waiting.sh set",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "~/.claude/hooks/kube-context-guard.sh",
+            "onFailure": "block",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      },
+      {
+        "hooks": [
+          {
+            "command": "~/.claude/hooks/tmux-waiting.sh clear",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "~/.claude/hooks/tmux-waiting.sh set",
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "~/.claude/hooks/tmux-waiting.sh clear",
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  },
+  "model": "opus",
   "permissions": {
     "allow": [
       "Bash(kubectl-readonly-strict *)",
@@ -66,24 +119,6 @@
       "WebFetch(domain:docs.github.com)",
       "WebFetch(domain:raw.githubusercontent.com)"
     ],
-    "deny": [
-      "Read(~/.ssh/**)",
-      "Read(~/.gnupg/**)",
-      "Read(~/.aws/**)",
-      "Read(~/.azure/**)",
-      "Read(~/.config/gcloud/**)",
-      "Read(~/.kube/**)",
-      "Read(~/.docker/config.json)",
-      "Read(~/.netrc)",
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(!.env.example)",
-      "Read(*.tfstate)",
-      "Read(*.tfstate.backup)",
-      "Read(*.pem)",
-      "Read(*.key)",
-      "Read(kubeconfig*)"
-    ],
     "ask": [
       "Bash(kubectl *)",
       "Bash(kubectl-readonly-strict *use-context*)",
@@ -119,60 +154,25 @@
       "Bash(git add --force*)",
       "Bash(gh pr merge *)",
       "Bash(docker push *)"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.gnupg/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.azure/**)",
+      "Read(~/.config/gcloud/**)",
+      "Read(~/.kube/**)",
+      "Read(~/.docker/config.json)",
+      "Read(~/.netrc)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(!.env.example)",
+      "Read(*.tfstate)",
+      "Read(*.tfstate.backup)",
+      "Read(*.pem)",
+      "Read(*.key)",
+      "Read(kubeconfig*)"
     ]
   },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/kube-context-guard.sh",
-            "onFailure": "block"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/tmux-waiting.sh clear"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/tmux-waiting.sh clear"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/tmux-waiting.sh set"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "~/.claude/hooks/tmux-waiting.sh set"
-          }
-        ]
-      }
-    ]
-  },
-  "theme": "dark",
-  "model": "opus"
+  "theme": "dark"
 }
